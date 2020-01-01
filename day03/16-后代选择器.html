@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			基础选择器: 标签选择器,类选择器,id选择器
+			复合选择器: 后代选择器
+			
+			
+			 */
+			/* 
+				权重:
+				权重值:
+				标签选择器 < 类选择器 < id选择器 < 行内样式 < !important
+				    1         10        100       1000       无穷
+			 */
+			/* h1{
+				color:red;
+			} */
+			.h5 .teacher{
+				color:red;
+			}
+			
+			/* .h5 h3{
+				color:yellow;
+			} */
+			.h5 div h3{
+				color:greenyellow;
+			}
+			
+			i{
+				color:pink;
+			}
+			.h5 i{
+				color:cyan;
+			}
+			.h5 h2 i{
+				color:skyblue;
+			}
+			.girl{
+				color:yellow;
+			}
+			.h5 .girl{
+				color:goldenrod;
+			}
+			.h5 h2 .girl{
+				color:blueviolet;
+			}
+			#badwoman{
+				color:red;
+			}
+			.h5 #badwoman{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="h5">
+			<h1 class="teacher">老刘</h1>
+			<h2>班长
+				<i>前女友</i>
+				<i class="girl" id="badwoman">现女友</i>
+			</h2>
+			<h3>1227学员</h3>
+			<h3>1227学员</h3>
+			<h3>1227学员</h3>
+			<div>
+				<h3>我是h3</h3>
+			</div>
+		</div>
+		<div class="java">
+			<h1 class="teacher">隔壁老王</h1>
+			<h2>班长</h2>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+		</div>
+	</body>
+</html>
