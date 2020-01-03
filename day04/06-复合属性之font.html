@@ -5,10 +5,13 @@
 		<title></title>
 		<style type="text/css">
 			div{
+				/* font属性: 将多个设置文本的单属性同时设置,字号和字体是必写项 */
 				color: red;
 				height: 500px;
 				background: pink;
+				/*         倾斜 加粗  字号/行高  字体 */
 				/* font: italic 700 40px/500px "宋体"; */
+				/* 当单属性和复合属性同时存在,为了避免层叠,要先写复合属性,再写单属性 */
 				font:40px "宋体";
 				line-height: 500px;
 				font-style:italic;
