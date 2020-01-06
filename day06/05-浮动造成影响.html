@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.header{
+				border: 10px solid green;
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background: red;
+				float: left;
+			}
+			.two{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				float: left;
+			}
+			.footer{
+				height: 300px;
+				background: gray;
+			}
+			.clearfix::after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header clearfix">
+		<div class="one"></div>
+		<div class="two"></div>
+		</div>
+		<div class="footer"></div>
+	</body>
+</html>
