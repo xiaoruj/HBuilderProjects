@@ -1,5 +1,5 @@
 /* 基础设置 */
-html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p{
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,p,input,button{
 	margin: 0;
 	padding: 0;
 }
@@ -29,11 +29,21 @@ i,em{
 u,ins,s,del{
 	text-decoration: none;
 }
+img{
+	/* 去除4px留白 */
+	display: block;
+}
+input,button{
+	/* 去除轮廓线 */
+	outline: none;
+	
+}
 .clearfix::after{
 				content:"";
 				display: block;
 				clear:both;
 }
+
 
 /* 风格设置 */
 body{
@@ -46,4 +56,7 @@ a{
 }
 a:hover{
 	color:#f40;
+}
+.colorF40{
+	color:#f40 !important;
 }
