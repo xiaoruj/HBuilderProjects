@@ -48,6 +48,75 @@ body{
 .header .list-right{
 	float:right;
 }
+.year-wrap{
+	height: 100px;
+	background: #D91E1C;
+}
+
+ .year{
+	width: 1190px;
+	height: 100px;
+	/* background: pink; */
+	margin: 0 auto;
+}
+.year .go{
+	float: left;
+	margin: 10px 0 0 15px;
+}
+.year ul{
+	float: left;
+	margin: 13px 0 0 10px;
+}
+.year ul li{
+	float: left;
+	margin-right: 10px;
+}
+.year ul li a{
+	display: block;
+	width: 209px;
+	height: 75px;
+	background: url(../images/shop-bg.png) no-repeat;
+	color:white;
+}
+.year ul li a div{
+	float: left;
+	margin: 12px 0 0 20px;
+	height: 47px;
+	overflow: hidden;
+}
+.year ul li a div h4{
+	font-size: 20px;
+}
+.year ul li a div h5{
+	font-size: 14px;
+	font-weight: 400;
+}
+.year ul li a img{
+	float: right;
+	width: 52px;
+	margin: 12px 14px 0 0 ;
+}
+.fish-leftBottom{
+	width: 360px;
+	height: 508px;
+	background: url(../images/fish-leftBottom.png) no-repeat;
+	position:fixed;
+	left: 50%;
+	margin-left:-955px;
+	bottom: 0;
+}
+.fish-rightBottom{
+	width: 360px;
+	height: 508px;
+	background: url(../images/fish-rightBottom.png) no-repeat;
+	position: fixed;
+	right:50%;
+	margin-right: -955px;
+	bottom:0;
+}
+
+
+
 
 .white-wrap{
 	height: 150px;
