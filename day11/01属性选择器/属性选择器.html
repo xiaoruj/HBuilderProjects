@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				属性选择器:
+			 */
+			/* li的属性名是class的 */
+			/* ul li[class]{
+				color:red;
+			} */
+			/* class属性值必须是box */
+			/* ul li[class = "box"]{
+				color:red;
+			} */
+			/* class属性值以box开头 */
+			/* ul li[class ^= "box"]{
+				color:red;
+			} */
+			/* class属性值以box结束 */
+			/* ul li[class $= "box"]{
+				color:red;
+			} */
+			/* class属性值包含box */
+			/* ul li[class *= "box"]{
+				color:red;
+			} */
+			/* class属性值以box是独立单词的 */
+			ul li[class ~= "box"]{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="box">烤鸭</li>
+			<li class="aaaboxbbb">炒肝</li>
+			<li class="xbox">卤煮火烧</li>
+			<li class="boxzzz">面茶</li>
+			<li class="one box">艾窝窝</li>
+			<li class="aiwowo">驴打滚</li>
+			<li>咖啡</li>
+		</ul>
+	</body>
+</html>
