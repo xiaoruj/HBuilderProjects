@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.one{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/* 
+					位移:是一个在标准流占位置的移动,类似于相对定位
+							    水平位移   垂直位移
+				 */
+				/* transform: translate(-50px,-50px); */
+				/* 百分比是移动自身的宽和高的百分比 */
+				transform: translate(-50%,-50%);
+			}
+			.two{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<div></div>
+		</div>
+		<div class="two"></div>
+	</body>
+</html>

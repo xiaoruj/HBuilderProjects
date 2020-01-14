@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 1000px;
+				height: 500px;
+				background: url(img/222.jpg) no-repeat 0 0;
+				margin: 0 auto;
+				border:1px solid #000;
+				}
+			.box:hover{
+			/* 
+				背景的缩放
+			 */
+			/*           水平     垂直 */
+			/* background-size:500px 250px ; */
+			/*                盒子宽度的百分比  盒子高度的百分比 */
+			/* background-size: 50% 50%; */
+			/* 
+			   按照盒子的最长边铺满,为了保证图片不变形,会有一部分被截掉	
+			 */
+			/* background-size: cover; */
+			/* 
+			   按照盒子的最短边铺满,为了保证图片不变形,会有一部分留白	
+			 */
+			background-size: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 80px;
+				line-height: 80px;
+				background: yellowgreen;
+				color: #fff;
+				margin: 100px auto;
+				font-size: 40px;
+				font-weight: 700;
+				text-align: center;
+				position: relative;
+				transition: all 1s linear;
+			}
+			.box::before,.box:after{
+				content: "";
+				width: 0;
+				height: 10px;
+				background: yellow;
+				position: absolute;
+				left:0;
+				transition: all 1s linear;
+			}
+			.box::before{
+				top: 0;
+			}
+			.box::after{
+				bottom: 0;
+				left: auto;
+				right: 0;
+			}
+			.box:hover{
+				background: #fff;
+				color: yellowgreen;
+			}
+			.box:hover::before,.box:hover::after{
+				width:100%
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			三只松鼠
+		</div>
+	</body>
+</html>
