@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 360px;
+				height: 240px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				position: relative;
+				color: #fff;
+				overflow: hidden;
+				transition: all 1s;
+			}
+			img{
+				display: block;
+				transition: all 1s 1s;
+			}
+			.box::before{
+				content:"";
+				width: 0;
+				height: 180px;
+				border-top:1px solid #fff;
+				border-bottom:1px solid #fff;
+				position: absolute;
+				left:50%;
+				margin-left: -160px;
+				top:50%;
+				margin-top: -90px;
+				/* transform: translate(-50%,-50%); */
+				transition: all 1s 1s;
+				z-index: 1;
+			}
+			.box::after{
+				content:"";
+				width: 300px;
+				height: 0;
+				border-left:1px solid #fff;
+				border-right:1px solid #fff;
+				position: absolute;
+				left:50%;
+				margin-left: -150px;
+				bottom:50%;
+				margin-bottom: -100px;
+				/* transform: translate(-50%,-50%); */
+				transition: all 1s 1s;
+			}
+			.box h2{
+				position: absolute;
+				left: 50%;
+				top: 50px;
+				transform: translateX(-50%);
+				font-size: 30px;
+				transition: all 1s 1s;
+			}
+			.box p{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 0;
+				font-size: 20px;
+				transition: all 1s 1s;
+				opacity: 0;
+			}
+			.box:hover:before{
+				width: 320px;
+			}
+			.box:hover:after{
+				height: 200px;
+			}
+			.box:hover h2{
+				text-shadow: 1px 1px 5px #000;
+			}
+			.box:hover p{
+				text-shadow: 1px 1px 5px #000;
+				bottom: 80px;
+				opacity: 1;
+			}
+			.box:hover img{
+				transform: scale(1.2);
+			}
+			.box:hover{
+				transform: rotateZ(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/img_02.jpg" >
+			<h2>HTML5+CSS3</h2>
+			<p>尚硅谷前端学院</p>
+		</div>
+	</body>
+</html>

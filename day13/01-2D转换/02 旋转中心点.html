@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 252px;
+				height: 300px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				
+			}
+			.box img{
+				transition: all 1s;
+				transform-origin: 50px 50px;
+			}
+			.box:hover img{
+				/* 旋转:默认是沿着z轴旋转,旋转中心点是,正中心 
+				   单位:deg  正值是顺时针方向,负值是逆时针方向
+				*/
+				transform: rotate(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/huge.jpg" >
+			<!-- <img src="img/fengche.png" > -->
+		</div>
+	</body>
+</html>
