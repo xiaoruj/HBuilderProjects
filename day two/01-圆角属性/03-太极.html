@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #ccc;
+			}
+			.box{
+				width: 300px;
+				height: 300px;
+				margin: 100px auto;
+				position: relative;
+			}
+			.left{
+				width: 150px;
+				height: 300px;
+				float: left;
+				background: #000;
+				border-radius: 150px 0 0 150px;
+			}
+			.right{
+				width: 150px;
+				height: 300px;
+				float: left;
+				background: #fff;
+				border-radius: 0 150px 150px 0;
+			}
+			.top{
+				width: 150px;
+				height: 150px;
+				background: #000;
+				position: absolute;
+				left: 75px;
+				top: 0;
+				border-radius: 50%;
+			}
+			.bottom{
+				width: 150px;
+				height: 150px;
+				background: #fff;
+				position: absolute;
+				left: 75px;
+				bottom: 0;
+				border-radius: 50%;
+			}
+			.top span{
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: #fff;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			.bottom span{
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: #000;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="top">
+				<span></span>
+			</div>
+			<div class="bottom">
+				<span></span>
+			</div>
+		</div>
+	</body>
+</html>
