@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 30px;
+				background: greenyellow;
+				margin: 300px auto;
+				animation: donghua 3s linear .5s normal infinite;
+			}
+			.box:hover{
+				animation-play-state: paused;
+			}
+			@keyframes donghua{
+				0%{
+					transform: rotate(0deg);
+				}
+				25%{
+					transform: rotate(90deg);
+				}
+				50%{
+					transform: rotate(180deg);
+				}
+				75%{
+					transform: rotate(270deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">动画</div>
+	</body>
+</html>
