@@ -1,0 +1,86 @@
+.header-wrap{
+	height: 34px;
+	background: #ebebeb;
+}
+.header{
+	width: 1200px;
+	height: 34px;
+	/*background: pink; */
+	margin: 0 auto;
+	line-height: 34px;
+}
+.mian{
+	width: 108px;
+	height: 24px;
+	background: #009f7f;
+	float: left;
+	margin: 5px 0 0 1px;
+	font-size: 12px;
+	color: #fff;
+	font-weight: 400;
+	text-align: center;
+	line-height: 24px;
+	border-radius: 3px;
+	position: relative;
+}
+.mian::after{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -6px;
+	border: 3px solid #009f7f;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+}
+.gu{
+	float: left;
+	font-size: 12px;
+	margin-left: 22px;
+}
+.gu:hover{
+	color: #009f7f;
+}
+.tel{
+	float: right;
+	margin-right: 8px;
+}
+.logoAndArea{
+	width: 1200px;
+	height: 84px;
+	background: pink;
+	margin: 0 auto;
+}
+.logoAndArea .logo{
+	width: 213px;
+	float:left;
+	margin: 18px 0 0 44px;
+	position: relative;
+}
+.logoAndArea .logo::after{
+	content:"";
+	width: 3px;
+	height: 64px;
+	background: url(../images/line.png);
+	position: absolute;
+	right:0;
+	top:0;
+}
+.logoAndArea .logo a{
+	/* 方案3 */
+	/* font-size: 0; */
+	display: block;
+	width: 177px;
+	height: 54px;
+	overflow: hidden;
+}
+.logoAndArea .logo2{
+	float:left;
+	width: 516px;
+	height: 29px;
+	background: url(../images/logo2.png) no-repeat;
+	margin: 36px 0 0 26px;
+}
