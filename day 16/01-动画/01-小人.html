@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: calc(528px/4);
+				height: 271px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				background: url(img/bigtap-mitu-queue-big.png) no-repeat 0 0;
+				animation: xiaoren 1s linear infinite;
+				animation-timing-function: steps(4);
+			}
+			@keyframes xiaoren{
+				from{
+					background-position-x: 0px;
+				}
+				to{
+					background-position-x: -528px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
