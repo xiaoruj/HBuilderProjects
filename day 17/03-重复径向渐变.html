@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.one{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				
+				background-image: radial-gradient(circle closest-side,red 10%,blue 50%,yellow 80%);
+			}
+			.two{
+				margin-top: 5px;
+				width: 300px;
+				height: 200px;
+				border: 1px solid #000;
+				background-image: radial-gradient(circle farthest-side at 50px 50px,red 10%,blue 50%,yellow 80%);
+			}
+			.three{
+				margin-top: 5px;
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				background-image: repeating-radial-gradient(red 10px,blue 50px,yellow 100px);
+			}
+			/* ps中获取的css*/
+			.box {
+			  border-style: solid;
+			  border-width: 1px;
+			  border-color: rgb(255, 0, 0);
+			  background-image: radial-gradient(circle closest-side at 50% 50%, rgb(24,24,24) 0%, rgb(255,255,255) 100%);
+			  position: absolute;
+			  left: 412px;
+			  top: 152px;
+			  width: 98px;
+			  height: 98px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="three"></div>
+		<div class="box"></div>
+	</body>
+</html>

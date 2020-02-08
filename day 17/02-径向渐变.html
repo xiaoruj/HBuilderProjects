@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			/*
+			  线性渐变: 沿着一条轴线进行渐变
+			  径向渐变: 从圆心到某一个点之间的渐变
+			  图形: 
+			  circle 圆形  正方形的盒子只能圆形
+			  ellipse 椭圆形 长方形默认是椭圆形,可以设置成圆形
+			  半径长度:
+			  closest-side： 指定径向渐变的半径长度为从圆心到离圆心最近的边 
+			  closest-corner： 指定径向渐变的半径长度为从圆心到离圆心最近的角 
+			  farthest-side： 指定径向渐变的半径长度为从圆心到离圆心最远的边 
+			  farthest-corner： 指定径向渐变的半径长度为从圆心到离圆心最远的角(默认值)
+			  改变圆心:
+			  at 水平位置 垂直位置
+			  */
+			background-image: radial-gradient(circle closest-side,red 10%,pink 50%,blue 80%);
+			}
+			.box2{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				background-image: radial-gradient(circle farthest-side at 50px 50px,red 10%,pink 50%,blue 80%);
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box2"></div>
+	</body>
+</html>
