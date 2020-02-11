@@ -1,0 +1,130 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav-wrap{
+	height: 48px;
+	background: #000;
+	
+}
+nav{
+	height: 48px;
+	background: #000;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 17px;
+	align-items: center;
+	/* 最大宽度 */
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.menu{
+	width: 18px;
+	height: 15px;
+	position: relative;
+}
+.menu span{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 18px;
+	height: 1px;
+	background: #fff;
+	
+}
+.menu span:nth-of-type(2){
+	top:7px;
+}
+.menu span:nth-of-type(3){
+	top:14px;
+}
+.logo{
+	width: 111px;
+	height: 19px;
+}
+.logo a{
+	display: block;
+	height: 100%;
+	/* 由于背景图缩放了,位置也需要移动之前原图的一半 */
+	background: url(../images/sprites@2x.png) no-repeat -5px -5px;
+	
+	/* 将2倍图的宽高缩放一半 */
+	background-size: 400px 400px;
+}
+nav i{
+	font-style: normal;
+	width: 20px;
+	height: 21px;
+	background: url(../images/sprites@2x.png) no-repeat -165px -5px;
+	background-size: 400px 400px;
+}
+.list{
+	width: 100%;
+	height: 100%;
+	background: #000;
+	position: absolute;
+	left:0;
+	top:48px;
+	display: none;
+}
+.list ul {
+	padding: 50px;
+}
+.list ul li{
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #fff;
+	
+	
+}
+.list ul li a{
+	color:#fff;
+	text-decoration: none;
+}
+.list ul li a em{
+	width: 17px;
+	height: 18px;
+	background: url(../images/sprites@2x.png) no-repeat -210px -5px;
+	background-size: 400px 400px;
+
+}
+.list .last a{
+	display: flex;
+	align-items: center;
+}
+
+/* 大屏设备 */
+@media (min-width:760px) {
+	
+	.list{
+		display: block;
+		/* 恢复标准流 */
+		position: static;
+		order: 2;
+		/* 层叠100%宽度,不在设置固定宽度,靠内容撑开 */
+		width: 80%;
+	}
+	.menu{
+		display: none;
+	}
+	.logo{
+		order: 1;
+	}
+	nav i{
+		order: 3;
+	}
+	.list ul{
+		display: flex;
+		padding: 0;
+		justify-content: space-around;
+	}
+	.list .last span{
+		display: none;
+	}
+	.list .last{
+		display: flex;
+		align-items: center;
+	}
+}

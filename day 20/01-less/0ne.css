@@ -1,0 +1,19 @@
+/* 定义全局变量 */
+.box {
+  /* 局部变量 */
+  width: 500px;
+  height: 100px;
+  background: #ff4400;
+  font-size: 40px;
+  font-weight: 700;
+  /* 注释 */
+}
+.box .s1 {
+  color: yellow;
+  font-family: "宋体";
+  font-size: 40px;
+}
+.box2 {
+  width: 500px;
+  height: 500px;
+}
