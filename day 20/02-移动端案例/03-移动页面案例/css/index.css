@@ -65,11 +65,9 @@ nav ul li a span {
 }
 .list {
   height: 11.05rem;
-  background: yellow;
 }
 .list .list-tit {
   height: 2.95rem;
-  background: pink;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,6 +82,7 @@ nav ul li a span {
 .list-tit a {
   font-size: 0.7rem;
   text-decoration: none;
+  color: #000;
 }
 .list-photo {
   overflow: scroll;
@@ -99,4 +98,12 @@ nav ul li a span {
   background: #fff;
   border-radius: 0.325rem;
   margin-right: 0.6rem;
+  position: relative;
+}
+.list-photo ul li img {
+  width: 7.125rem;
+  height: 3.875rem;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
