@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//第一种；先定义变量，然后赋值保存
+			var num;
+			num = 10;
+			console.log(num);
+			num = 20;
+			console.log(num);
+			
+			//第二种；定义变量初始化
+			var num2 = 100;
+			console.log(num2);
+			num2 = 200;
+			console.log(num2);
+			
+			//第三种，特殊的
+			num3 = 300;
+			console.log(num3); 
+			var a = 10;
+			var b = 20
+			
+			//定义两个变量特殊情况要记
+			var a = 10;
+			var b = 20;
+			var a = 10,b = 20;//完全等价于  var a = 10;var b = 20;变量a和b相同不相同都能使用；
+			console.log(a,b);
+			var a = b = 10;//完全等价于var a = 10; b = 10;而且变量a和b必须是相同的值，才能用连=；
+			console.log(a,b);
+		</script>
+	</body>
+</html>
