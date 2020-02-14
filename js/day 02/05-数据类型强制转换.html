@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1、把其他的数据类型值转换为数字
+			// 字符串转数字
+			var str = 'liyifeng';//NaN (not a number)是一个数字类型，表示不是一个数字
+			str = '李易峰';//NaN
+			str = '100';//100
+			str = '1.11';//1.11
+			str = '12liy123ifeng234';//NaN
+			str = '';//0
+			str = '       ';//0
+			// var result = Number(str);
+			// console.log(result);
+			console.log(Number(str));
+			//布尔值转数字
+			var bool = true;//1
+			bool = false;//0
+			console.log(Number(bool));
+			//undefined 转数字
+			var und;//NaN
+			console.log(Number(und));
+			//null转数字
+			var nul = null;//0
+			console.log(Number(nul));
+			
+			//1、把其他类型值转字符串
+			//转化字符串没有什么特殊，只要给我值，那么就会把这个值原样变为字符串输出；
+			var num = 100;//'100'
+			console.log(String(num));
+			bool = true;//'true'
+			console.log(String(bool));
+			console.log(String(und));//'undefined'
+			console.log(String(nul));//'null'
+			//3、把其它类型强制转化为布尔值
+			//数字转布尔值   非0即为真（NaN也是数字类型，NaN如果转化布尔出来的是false）
+			//除了0和NaN以外，其它的都是true
+			num = 6;
+			num = 0;
+			num = 0.1;
+			num = NaN;
+			console.log(Boolean(num));//fales
+			//字符串转布尔值   非空即为真
+			str = 'liyifeng';
+			console.log(Boolean(str));//ture
+			str = '123';
+			console.log(Boolean(str));//ture
+			str = '123dhg123flkasj132';
+			console.log(Boolean(str));//ture
+			str = '     ';
+			console.log(Boolean(str));//ture
+			str = '';
+			console.log(Boolean(str));//false
+			//undefined转布尔 就是false
+			console.log(Boolean(und));//false
+			//null转布尔值  就是false
+			console.log(Boolean(nul));//false
+		</script>
+	</body>
+</html>
