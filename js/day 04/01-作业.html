@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// for(var i = 1; i< 101; i++){
+			// 	if(i % 3 == 0){
+			// 		console.log(i);
+			// 	}
+			// }
+			// for(var i = 1; i< 101; i++){
+			// 	if(i % 7 == 0){
+			// 		console.log(i);
+			// 	}
+			// }
+			//针对switch case练习一个,输入年龄 判定是童年少年青年中年老年
+			//			0 ~ 12			童年
+			//			13 ~ 18			少年
+			//			19 ~ 35			青年
+			//			36 ~ 55			中年
+			//			56 ~ 100		老年
+			var age = parseFloat(prompt('请输入您的年龄'));
+			switch(true){
+				case age >= 0 && age <= 12:
+					console.log('童年');
+					break;
+				case age >= 13 && age <= 18:
+					console.log('少年');
+					break;
+				case age >= 19 && age <= 35:
+					console.log('青年');
+					break;
+				case age >= 36 && age <= 55:
+					console.log('中年');
+					break;
+				case age >= 56 && age <= 120:
+					console.log('老年');
+					break;
+				default:
+					console.log('请输入合法的年龄 0 - 120');
+					break;
+			}
+		</script>
+	</body>
+</html>
