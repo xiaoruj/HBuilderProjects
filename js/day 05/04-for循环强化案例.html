@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//打印三位数位上有3或者7的数字 
+			// for(var i = 100; i < 1000; i++){
+			// 	//先求出每个数各个位置上的数字
+			// 	//例如987/100=9
+			// 	//987/10=98.7%10=8.7
+			// 	//987%10=7
+			// 	var b =parseFloat(i / 100);
+			// 	var s = parseFloat(i / 10%10);
+			// 	var g = i % 10;
+			// 	if(b == 3 || b == 7 || s == 3 || s == 7 || g == 3 || g == 7){
+			// 		console.log(i);
+			// 	}
+			// }
+			//求100-999之间的水仙花数。abc =a^3+b^3+c^3 
+			// for(var i = 100; i <= 999; i++){
+			// 	var b = parseInt(i / 100);
+			// 	var s = parseInt(i/10%10);
+			// 	var g = i % 10;
+			// 	// if(b*b*b + s*s*s + g*g*g == i){
+			// 	// 	console.log(i);
+			// 	// }
+			// 	//ES7幂运算符**
+			// 	if(b**3 + s**3 + g**3 == i){
+			// 		console.log(i);
+			// 	}
+			// }
+			//计算100的阶乘 1*2....*100   100！
+			// var factorial = 1;
+			// for(var i = 1; i <= 100; i++){
+			// 	factorial *= i;
+			// }
+			// console.log(factorial);
+			//求1!+2!+3!+...+20!的值
+			// var sum = 0;
+			// var factorial = 1;
+			// for(var i = 1; i <= 20; i++){
+			// 	factorial *= i;
+			// }
+			// console.log(factorial);
+			//输出1-100之间所有的素数（质数）（只能被1和自身整除的数,但是1不是质数）
+			//标志位方法
+			var flag = true;
+			for(var i = 1; i <= 100; i++){
+				for(var j = 2; j <= i - 1;j++){
+					if(i % j == 0){
+						flag = false;
+						break;
+					}
+				}
+				if(flag && i!=1){
+					console.log(i);
+					}
+					flag = true;//重置标志位
+			}
+			//2、计数器方法
+//			var n = 0;
+//			for(var i = 1; i <= 100; i++){
+//				//7 8
+//				for(var j = 1; j <= i; j++){
+//					if(i % j == 0){
+//						n++;//1 2
+//					}
+//				}
+//				
+//				if(n == 2){
+//					console.log(i);
+//				}
+//				
+//				n = 0; //重置计数器；
+//			}
+
+//			完成一个等腰三角形的打印
+			
+			// for(var i = 0; i < 7; i++){
+			// 	//打印空格
+			// 	for(var j = 0; j < 6 - i; j++){
+			// 		document.write('&ensp;');
+			// 	}
+			// 	//打印星花
+			// 	for(var k = 0; k < 2 * i + 1; k++){
+			// 		document.write('*');
+			// 	}
+			// 	document.write('<br>');
+			// }
+		</script>
+	</body>
+</html>

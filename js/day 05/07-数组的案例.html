@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1、数组所有元素的和
+//			var arr = [100,200,300,400,500];
+//			var sum = 0;
+			
+//			for(var i = 1; i <=100; i++){
+//				sum += i;
+//			}
+			
+//			for(var i = 0; i < arr.length; i++){
+//				sum += arr[i];
+//			}
+//			console.log(sum);
+			
+			//2、求数组最大值，最小值，平均值
+//			var arr = [10,6,12,44,2,200,8];
+//			var max = arr[0];
+//			var min = arr[0];
+//			var sum = 0;
+//			
+//			for(var i = 0; i < arr.length; i++){
+//				//求最大值
+//				if(max <= arr[i]){
+//					max = arr[i];
+//				}
+//				
+//				//求最小值
+//				if(min >= arr[i]){
+//					min = arr[i];
+//				}
+//				
+//				//求和
+//				sum += arr[i];
+//				
+//				
+//			}
+//			console.log(max,min,sum/arr.length);
+
+
+			//3、翻转数组
+			//在新数组当中去翻转，原数组不变
+			
+			var arr = [1,2,3,4,5];
+//			var newArr = [];
+//			
+//			for(var i = arr.length - 1; i >= 0; i--){
+//				newArr[newArr.length] = arr[i];
+//			}
+//			
+//			console.log(newArr);
+//			console.log(arr);
+			
+			
+			//在原数组去翻转数组
+			
+			for(var i = 0; i < arr.length/2; i++){
+				var temp = arr[i];
+				arr[i] = arr[arr.length - 1 - i]
+				arr[arr.length - 1 - i] = temp;
+			}
+			
+			console.log(arr);
+			
+			
+		</script>
+	</body>
+</html>
