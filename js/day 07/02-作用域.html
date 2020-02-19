@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//函数的外部叫做全局作用域
+			//函数的内部叫做局部作用域
+			//当我们写代码的时候，作用域就已经可以确定的
+			var a = 10;//在全局作用域当中定义的
+			function fn(){
+				var a = 100;//在局部作用域当中定义
+				var b = 20;
+				console.log(a);
+				console.log(b);
+			}
+			fn();
+			console.log(a);
+			console.log(b);
+		</script>
+	</body>
+</html>

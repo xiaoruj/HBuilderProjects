@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 10;
+			var b = 20;
+			// var c = 300;
+			function fn() { //fn也是全局变量var fn = function(){};
+				//碰到函数内部变量不带var
+				//1、先在函数内部去找，有没有写过var b;
+				//2、如果找到var b，就是局部变量去处理；如果没有找到，那么去形参去找，看看有没有b这个变量;
+				//3、如果形参找到了b，同样当作局部变量去处理（相当于内部写了var b）,如果没有找到，去函数外部全局作用域去找
+				//4、如果全局找到了b，那么内部的b相当于是在操作全局变量；如果没有找到，那么相当于是在全局定义了一个全局变量；
+				var a = 100;
+				// var b = 200;
+				b = 200;//第一次改 把这个b var去掉	本质是把全局变量的b改成了200	局部是 没有b这个变量的
+				// var c = 300;
+				c = 300;//第二次修改这个c把var去掉;	本质是在全局定义了一个全局变量c 并且赋值为300；内不是没有这个c变量的
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+			fn();
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		</script>
+	</body>
+</html>
