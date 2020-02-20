@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// var a = 10;
+			// var b = 20;
+			//第一种方式，借用第三方变量实现交换两个变量的值
+			// var c;
+			// c = a;
+			// a = b;
+			// b = c;
+			// console.log(a,b);
+			//第二种方式，利用求和
+			// 30 = 10 + 20; 
+			// a = a + b;
+			//10 = 30 -20
+			// b = a - b;
+			// 20 = 30 - 10
+			// a = a - b;
+			// console.log(a,b);
+			//案例练习
+			//1输入一个数，如果这个数大于100就让这个数加1输出
+			// var num = parseInt(prompt('请输入一个数字'));
+			// if(num > 100){
+			// num += 1;
+			// num++;
+			//++num;
+			// console.log(num);
+			// console.log(num + 1);
+			// }
+			//2输入一个数；如果这个数是0 - 100之间 那么就让这个数+5输出
+			//			如果这个数是100- 200之间 那么就让这个数-5输出
+			//			如果这个数是200- 500之间 那么就让这个数*5输出
+			//			如果这个数是500 - 1000之间 那么就让这个数/5输出
+			//			如果这个数不在我规定的这些个范围，那么就原样输出 
+			// var num = parseFloat(prompt('请输入一个数'));
+			// if(num >= 0 && num < 100){
+			// 	num +=5;
+			// 	console.log(num);
+			// }else if(num >= 100 && num < 200){
+			// 	num -= 5;
+			// 	console.log(num);
+			// }else if(num >= 200 && num < 500){
+			// 	num *= 5;
+			// 	console.log(num);
+			// }else if(num >= 500 && num < 1000){
+			// 	num /= 5;
+			// 	console.log(num);
+			// }else{
+			// 	console.log(num);
+			// }
+			// console.log(num);
+			//3输入一个数字，判断是星期几
+			// var num = parseFloat(prompt('请输入一个数字'));
+			// switch(num) {
+			// 	case 1:
+			// 		console.log('周一');
+			// 		break;
+			// 	case 2:
+			// 		console.log('周二');
+			// 		break;
+			// 	case 3:
+			// 		console.log('周三');
+			// 		break;
+			// 	case 4:
+			// 		console.log('周四');
+			// 		break;
+			// 	case 5:
+			// 		console.log('周五');
+			// 		break;
+			// 	case 6:
+			// 		console.log('周六');
+			// 		break;
+			// 	case 7:
+			// 		console.log('周日');
+			// 		break;
+			// 	default:
+			// 		console.log('请输入1-7之间的数字');
+			// 		break;
+			// }
+			//4输入分数，判定优良差和不及格
+			var score = parseFloat(prompt('请输入你的分数'));
+			switch (true) {
+				case score >= 90 && score <= 100:
+					console.log('A');
+					break;
+				case score >= 80 && score < 90:
+					console.log('B');
+					break;
+				case score >= 70 && score < 80:
+					console.log('C');
+					break;
+				case score >= 60 && score < 70:
+					console.log('D');
+					break;
+				case score >= 0 && score < 60:
+					console.log('不及格，重考');
+					break;
+				default:
+					console.log('请输入合法的分数 0 - 100');
+					break;
+			}
+		</script>
+	</body>
+</html>
