@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//IIFE:Immediately Invoked Function Expression意为立即调用的函数表达式，也就是说，声明函数的同时立即调用这个函数。
+//			//也被称作匿名函数自调用；
+			//1、有名函数
+//			function fn(){};			
+//			var fn1 = function(){}//函数表达式定义；
+			
+//			fn();
+//			fn1();
+//			fn();//这样的函数有名字，可以多次执行同一个函数；因为fn内部存储了同一个函数的地址，以后想调多少次调多少次
+			//函数虽然调了多次，但是每一次都是一个新的执行环境；
+			
+//			function func(){
+//				var a = 10;
+//				a++;
+//				console.log(a);
+//			}
+//			
+//			func();
+//			console.log('哈哈');
+//			func();
+			//匿名函数
+			
+			(function(){
+				console.log('i love you~ zhao li ying~');
+			})();
+			
+			//匿名函数自调用（立即调用函数表达式）特点
+			//1、必须在定义的同时调用
+			//2、只能执行一次；
+			//3、匿名函数在全局代码执行的时候不做预解析，执行函数内部的代码是要做预解析的；
+//			(function(){
+//				console.log('i love you~ zhao li ying~');
+//			})();//如果你重新写一遍，那么调用的不是上面的那个函数，而是一个新的函数表达式，因为地址不一样；
+//			var arr = [];
+//			var arr1 = [];
+			//匿名函数的作用（了解）： 
+			//1、防止外部命名空间被污染
+			//2、隐藏内部代码实现
+			//3、项目的一些初始化
+//			var a = 10;
+//			var b = 20;
+//			function add(a,b){
+//				return a + b;
+//			}
+//			add(a,b);
+//			var a = 'yangmi';
+//			(function(){
+//				var a = 10;
+//				var b = 20;
+//				function add(a,b){
+//					return a + b;
+//				}
+//				add(a,b);
+//			})();
+//			(function( w, und ) {
+//				//內部就是jquery的源碼
+//				//源碼一般都是不讓人动的，源码都是被隐藏在函数内部的，一般 都是一个匿名函数
+//				//在源码内部，讲内部该暴露的东西 暴露出去；
+//			})( window );
+		</script>
+	</body>
+</html>

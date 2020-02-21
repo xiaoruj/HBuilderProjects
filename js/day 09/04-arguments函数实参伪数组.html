@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//伪数组：伪数组本质上是一个对象，但是呢它可以和数组很多地方一样去使用；可以有下标也可以有长度；所以我们称为伪数组；（不是真的数组）
+			//arguments就是一个伪数组，/arguments,在每个函数内部都会存在arguments伪数组；
+			
+			//1、函数形参其实是可以不写的；
+			//传统写法
+//			function add(a,b){
+//				return a + b;
+//			}
+
+//			console.log(add(10,20));
+			//不写形参也是可以的，但是一般情况下，我们还是按照传统写法去写，如果不写形参可以是可以，但是我们在函数内部操作不好操作；
+//			function add(){
+////				console.log(arguments);
+//				return arguments[0] + arguments[1];
+//			}
+//			console.log(add(10,20));
+			
+			//2、我们可以通过arguments让函数表现出多个功能 ************************
+			
+			//假设我想让一个函数 不但有+法功能  还有-法功能，可以通过实参传递的个数去设计
+			//如果传递两个参数（实参）那么就是减法
+			//如果传递三个参数（实参）那么就是加法
+			
+			function addOrSub(a,b,c){
+				if(arguments.length == 2){
+					console.log(c);//undefined
+					return a - b;
+				}else if(arguments.length == 3){
+					return a + b + c;
+				}
+			}
+//			console.log(addOrSub(20,10));//传递两个参数，形参c是没有传值的，因此c的值是
+			console.log(addOrSub(10,20,30));
+		</script>
+	</body>
+</html>
