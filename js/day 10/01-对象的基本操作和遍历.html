@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:'赵丽颖',
+				age:33,
+				'content-type':'哈哈',//对象当中如果有特殊名字的属性,这个属性首先必须加''
+				eat:function(){
+					console.log('吃');
+				}
+			}
+			
+			console.log(obj);
+			//增和改   有则更改，无则增加
+			//增
+			obj.gender = 'female';//无则增加
+			//改
+			obj.name = '颖宝';//有则更改
+			console.log(obj);
+			
+			//改
+//			obj.content-type = '嘿嘿';//假设操作的是不符合标识符规则的属性，那么没办法使用.语法
+			obj['content-type'] = '嘿嘿';
+			//增
+			obj['123'] = 345;//123这个字符串名字不符合标识符规则
+			
+			//符合标识符规则的也可以使用[]
+			
+			obj['name'] = '杨幂';
+			console.log(obj);
+			
+			//[]是通用的
+			
+			//2、当我们要使用变量里面的值，作为对象属性名的时候，要用到[]
+			var a = 'haha';
+			obj[a] = 'heihei';
+			
+			console.log(obj)
+			//删  点语法和[]
+			delete obj.age;
+			console.log(obj);
+			delete obj['content-type'];
+			console.log(obj);
+			
+			var b = 'name';
+			delete obj[b];//b是变量，不能加引号
+			console.log(obj);
+			
+			//对象的查和遍历
+			//查
+			console.log(obj.gender);
+			console.log(obj['123']);
+			console.log(obj.aaa);//undefined
+			var c = 'eat';
+			console.log(obj[c]);//obj['eat'] ===== obj.eat;
+			console.log(obj.eat())//调用方法   
+			
+			//对象的遍历
+			var obj1 = {
+				name:'劳斯莱斯',
+				color:'red',
+				run:function(){
+					console.log('跑的很快');
+				}
+			}
+			
+			for(var key in obj1){
+//				console.log(key);//遍历打印对象当中所有的属性
+//				
+//				console.log(obj1[key]);//遍历打印对象当中所有的属性值
+
+				console.log(key,obj1[key]);
+				
+			}
+		</script>
+	</body>
+</html>

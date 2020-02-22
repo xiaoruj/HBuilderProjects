@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name,age,gender){
+				console.log(this);//{}
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				this.eat = function(){
+					console.log('吃饭');
+				}
+				return [1,2,3];
+			}
+			
+//			var result = Person('zhaoliying',33,'female');//把函数当做普通函数用
+//			console.log(result);
+			
+			var p1 = new Person('zhaoliying',33,'female');//把函数当构造函数用
+			console.log(p1);
+		</script>
+	</body>
+</html>

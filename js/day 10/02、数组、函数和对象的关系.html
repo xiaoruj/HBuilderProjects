@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,2,3,4,5];
+//			console.log(arr);
+//			arr[10] = 11;
+//			console.log(arr);//数组可以往后面任意一个不存在的索引位置添加新值，然后中间没有值得索引位置值全是undefined;
+			
+			arr.haha = 'heihei';//只会在对象当中显示
+			arr['7'] = 100;
+			arr[true] = 200;
+			for(var i = 0; i < arr.length; i++){
+				console.log(arr[i]);
+			}
+			for(var key in arr){
+				console.log(key,arr[key]);
+			}
+			
+			//A()  A一定是函数，不是函数就报错（类型错误）；
+			//A.B  A一定是对象（不是对象也是要报错的，类型错误），B一定是A这个对象当中的属性
+			function fn(){
+				console.log('i love you~');
+			}
+			fn(); 
+			
+			fn.gender = '男';
+			for(var key in fn){
+				console.log(key,fn[key]);
+			}
+			console.log(fn);
+			console.dir(fn);
+		</script>
+	</body>
+</html>
