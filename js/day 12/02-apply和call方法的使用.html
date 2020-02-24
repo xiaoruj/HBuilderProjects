@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Dog(name,color,age){
+				this.name = name;
+				this.color = color;
+				this.age = age;
+			}
+			function Car(name,color){
+				this.name = name;
+				this.color = color;
+			}
+			Dog.prototype.run = function(a,b){
+				console.log(this);
+				console.log('跑的很快'+a+b);
+			};
+			Car.prototype.run = function(a,b){
+				console.log('开的很快');
+			}
+			var d1 = new Dog('金毛','golden',2);
+			var d2 = new Dog('拉布拉多','white',2);
+			var c1 = new Car('奥迪','black');
+			console.log(d1);//Dog
+			console.log(d1.run);//f(a,b)
+			console.log(d1.run());//unde
+			//apply
+			// d1.run.apply(c1,[600,'haha']);
+			d1.run.call(d2,[600,'haha']);
+		</script>
+	</body>
+</html>
