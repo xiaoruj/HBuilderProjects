@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//随机数1-55
+			// console.log(Math.floor(Math.random()*55 + 1))
+			//随机验证码
+			// var str = 'qwertyuiopasdfghjklZXCVBNM1234567890mnbvcxzLKJHGFDSA';
+			// console.log(str[2]);
+			// str[2] = '嘿嘿';
+			// console.log(str);
+			// var code = '';
+			// for(var i = 0; i < 6; i++){
+			// 	code += str[Math.floor(Math.random()*str.length)]
+			// }
+			// console.log(code);
+			//封装函数实现n位随机验证码
+			function getRandomCode(n){
+				var str = 'qwertyuiopasdfghjklZXCVBNM1234567890mnbvcxzLKJHGFDSA';
+				var code = '';
+				for(var i = 0; i < n; i++){
+					code += str[Math.random()*str.length]
+				}
+				return code;
+			}
+			console.log(getRandomCode(4));
+		</script>
+	</body>
+</html>

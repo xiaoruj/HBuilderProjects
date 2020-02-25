@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var timeStart = Date.now();
+			var a = Date();
+			console.log(a);
+			var date = new Date();
+			console.log(date);
+			console.log(Date.now());
+			console.log(date.getFullYear());//只拿年，并且是全写的年
+			console.log(date.getMonth());//拿到月  月份是用0 - 11表示的，因此拿到都得+1
+			console.log(date.getDate());//拿到日
+			console.log(date.getDay());//拿的是星期
+			console.log(date.getHours());//小时
+			console.log(date.getMinutes());//分钟
+			console.log(date.getSeconds());//秒
+			console.log(date.toLocaleTimeString());
+			console.log(date.toLocaleDateString());
+			console.log(date.getTime());//1970 年 1 月 1 日之间的毫秒数
+			//封装函数实现日期格式化
+			function getDateTimeString(){
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var time = date.toLocaleDateString();
+				return '现在是' + year + '年' + month + '月' + day + '日' + time;
+			}
+			console.log(getDateTimeString());
+			var timeEnd = Date.now();
+			console.log(timeEnd - timeStart);
+		</script>
+	</body>
+</html>
