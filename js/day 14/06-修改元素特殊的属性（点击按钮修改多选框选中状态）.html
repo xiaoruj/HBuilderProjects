@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<input type="checkbox"  id="check" />
+		
+		<script type="text/javascript">
+//			点击按钮修改多选框选中
+			window.onload = function(){
+				var btn = document.getElementById('btn');
+				var check = document.getElementById('check');
+				btn.onclick = function(){
+					check.checked = true;
+					//假设点击按钮，第一次点击打勾  第二次取消，如此反复；
+//					check.checked = !check.checked;
+				}
+			}
+				
+		</script>
+	</body>
+</html>

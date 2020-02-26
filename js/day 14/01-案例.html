@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			1.	字符串反转 先把字符串转化为数组
+//			var str = 'i love you zhao li ying~';
+//			
+//			var arr = str.split('');
+//			console.log(arr);
+			//2、让数组去翻转
+//			arr.reverse();
+//			console.log(arr);
+//			
+			//3、把翻转后的数组变为字符串
+//			str = arr.join('')
+//			console.log(str);
+//			2.打印字符串中出现字母最多的次数   *****
+			var str = '12312341313111114411';
+			
+			//1、把字符串当中所有出现的字符，全部计数，存储在一个对象当中
+			//以出现的字符为属性，出现的次数为属性值
+			var obj = {};
+			
+			for(var i = 0; i < str.length; i++){
+				var ch = str[i];
+//				if(obj[ch]){//obj['1']
+//					obj[ch] += 1;
+//				}else{
+//					obj[ch] = 1;
+//				}
+				obj[ch]?obj[ch] += 1:obj[ch] = 1;
+//				obj[str[i]]?obj[str[i]] += 1:obj[str[i]] = 1;//一行就可以搞定，其实就是上面两行的综合
+			}
+			var max = obj[str[0]];
+			var min = obj[str[0]];
+			var resultCharMax = '';
+			var resultCharMin = '';
+			for(var key in obj){
+				//出现次数最大的
+				if(max <= obj[key]){
+					max = obj[key];
+					resultCharMax = key;
+				}
+				//出现次数最小的
+				if(min >= obj[key]){
+					min = obj[key];
+					resultCharMin = key;
+				}
+			}
+			console.log(max,resultCharMax);
+			console.log(min,resultCharMin);
+		</script>
+	</body>
+</html>
