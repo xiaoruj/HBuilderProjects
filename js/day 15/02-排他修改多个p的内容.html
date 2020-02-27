@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		p{我是段落$}*5
+		<p>我是段落1</p>
+		<p>我是段落2</p>
+		<p>我是段落3</p>
+		<p>我是段落4</p>
+		<p>我是段落5</p>
+		<script type="text/javascript">
+			window.onload = function(){
+							//获取到所有的p
+			//				var pNodes = document.querySelectorAll('p');
+			//				for(var i = 0; i < pNodes.length; i++){
+			//					pNodes[i].onclick = function(){
+			//						for(var j = 0; j < pNodes.length; j++){
+			//							pNodes[j].innerHTML = '哈哈';
+			//						}
+			//					};
+			//				}
+			//			}
+						window.onload = function(){
+							var pNodes = document.querySelectorAll('p');
+							for(var i = 0; i < pNodes.length; i++){
+								pNodes[i].onclick = function(){
+									for(var j = 0; j < pNodes.length; j++){
+										pNodes[j].innerHTML = '嘿嘿';
+			//						console.log(i);//5
+			//						pNodes[i].innerHTML = '哈哈';
+									this.innerHTML = '哈哈';
+								};
+							}
+						}
+		</script>
+	</body>
+</html>

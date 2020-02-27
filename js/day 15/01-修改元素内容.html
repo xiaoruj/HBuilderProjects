@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.p1{
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p1">李易峰<span>我在北京等你</span></p>
+		<script type="text/javascript">
+			window.onload = function(){
+				var pNode = document.querySelector('.p1');
+			console.log(pNode.innerHTML);
+			pNode.innerHTML = '<h2>嘿嘿<h2>';
+			console.log(pNode.innerText);
+			pNode.innerText = '<h2>嘿嘿<h2>';
+			console.log(pNode.textContent);
+			console.log(pNode.innerText);
+			}
+			
+		</script>
+	</body>
+</html>

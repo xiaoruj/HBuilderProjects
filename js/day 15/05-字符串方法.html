@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = '1*234567890123A';
+			console.log(str.charAt(8));//index    ****************
+			console.log(str.charCodeAt(9));//0  48 1 49  
+			console.log(str.concat());//拼接	    
+			console.log(String.fromCharCode(50));//unicode编码
+			console.log(str.lastIndexOf('23',8));//求字串位置,默认从末尾开始
+			str = '12A345678aB';
+			console.log(str.localeCompare('12345678'));//比较大小     两个字符串直接可以使用条件运算符
+			console.log(str.slice(-6,-1));//抽出字串  *********************
+			console.log(str.substr(-5,5));//后面的参数是长度
+			console.log(str.substring(4,2));//后面的参数不允许是负数
+
+			console.log(str.split('')); //**************************
+			console.log(str.toLocaleLowerCase());
+			console.log(str.toLocaleUpperCase());
+			console.log(str.valueOf());
+			console.log(str.toString());
+//			console.log(str.replace('1','**'));//替换字串
+//			console.log(str.search())
+//			console.log(str.match(/1/g));//找到匹配项返回数组
+//二、	string方法 ES6
+		//	1.	includes(str) : 判断是否包含指定的字符串
+				console.log(str.includes('Z'));
+		//	2. 	startsWith(str) : 判断是否以指定字符串开头
+				console.log(str.startsWith('122'));
+		//	3. 	endsWith(str) : 判断是否以指定字符串结尾
+				console.log(str.endsWith('8ab'));
+		//	4. 	repeat(count) : 重复指定次数
+				console.log(str.repeat(-1));
+		</script>
+	</body>
+</html>
