@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="李易峰" />
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var inputNode = document.querySelector('input');
+				inputNode.onfocus = function(){
+					this.style.color = 'hotpink';
+					this.style.backgroundColor = 'skyblue';
+				};
+				
+				inputNode.onblur = function(){
+					var r1 = Math.floor(Math.random()*256); 
+					var g1 = Math.floor(Math.random()*256);
+					var b1 = Math.floor(Math.random()*256);
+					
+					var r2 = Math.floor(Math.random()*256); 
+					var g2 = Math.floor(Math.random()*256);
+					var b2 = Math.floor(Math.random()*256);
+					
+					
+					this.style.color = 'rgb('+ r1 +','+ g1 +','+ b1 +')';
+					this.style.backgroundColor = 'rgb('+ r2 +','+ g2 +','+ b2 +')';
+					
+				};
+			}
+		</script>
+	</body>
+</html>

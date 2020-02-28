@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button>显示/隐藏</button>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.querySelector('button');
+				var box = document.getElementById('box');
+				var flag = true;
+				btn.onclick = function(){
+					if(flag){
+						box.style.visibility = 'hidden';
+					}else{
+						box.style.visibility = 'visible';
+					}
+					flag = !flag;
+				}
+			}
+		</script>
+	</body>
+</html>

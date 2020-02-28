@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			.list{
+				width: 200px;
+				height: 150px;
+				border: 1px solid blue;
+			}
+			.list li{
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				background-color: hotpink;
+				text-align: center;
+			}
+			.list li:nth-child(2){
+				border-top: 1px solid blue;
+				border-bottom: 1px solid blue;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>李易峰</li>
+			<li>刘诗诗</li>
+			<li>杨紫</li>
+		</ul>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var liNodes = document.querySelectorAll('.list li');
+				for(var i = 0; i < liNodes.length; i++){
+					liNodes[i].onmouseover = function(){
+						this.style.backgroundColor = 'greenyellow';
+					};
+					liNodes[i].onmouseout = function(){
+						this.style.backgroundColor = 'hotpink';
+					};
+				}
+			}
+		</script>
+	</body>
+</html>

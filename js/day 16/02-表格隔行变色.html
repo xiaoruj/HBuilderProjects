@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>班级</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+			<tr>
+				<td>1227</td>
+				<td>李易峰</td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<td>1227</td>
+				<td>刘诗诗</td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<td>1227</td>
+				<td>杨紫</td>
+				<td>28</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var trNodes = document.querySelectorAll('tr');
+				for(var i = 0; i < trNodes.length; i++){
+					if(i % 2 == 0){
+						trNodes[i].style.backgroundColor = 'red';
+					}else{
+						trNodes[i].style.backgroundColor = 'green';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
