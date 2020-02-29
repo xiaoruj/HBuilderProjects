@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul,li{
+				list-style: none;
+			}
+			.list{
+				position: relative;
+				width: 200px;
+				height: 150px;
+				border: 1px solid black;
+			}
+			.list>li{
+				width: 200px;
+				height: 50px;
+				background-color: hotpink;
+				text-align: center;
+				line-height: 50px;
+			}
+			.list>li a{
+				color: white;
+			}
+			.list>li:nth-child(2){
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				box-sizing: border-box;
+			}
+			.list>li .listIn{
+				position: absolute;
+				left: 201px;
+				top: -1px;
+				display: none;
+				width: 200px;
+				height: 150px;
+				border: 1px solid blueviolet;
+			}
+			.list>li .listIn li{
+				width: 200px;
+				height: 50px;
+				background-color: skyblue;
+				/*text-align: center;
+				line-height: 50px;*/
+			}
+			.list>li .listIn li:nth-child(2){
+				border-top: 1px solid blueviolet;
+				border-bottom: 1px solid blueviolet;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>
+				<a href="javascript:;">女装</a>
+				<ul class="listIn">
+					<li>裙子</li>
+					<li>裤子</li>
+					<li>衬衫</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">家电</a>
+				<ul class="listIn">
+					<li>电视</li>
+					<li>冰箱</li>
+					<li>洗衣机</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">运动</a>
+				<ul class="listIn">
+					<li>足球</li>
+					<li>羽毛球</li>
+					<li>篮球</li>
+				</ul>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload = function(){
+				var liNodes = document.querySelectorAll('.list>li');
+				var ulInNodes = document.querySelectorAll('.list>li .listIn');
+				for(var i = 0; i < liNodes.length; i++){
+					liNodes[i].index = i;
+					liNodes[i].onmouseover = function(){
+						ulInNodes[this.index].style.display = 'block';
+					};
+					liNodes[i].onmouseout = function(){
+						ulInNodes[this.index].style.display = 'none';
+					};
+				}
+			}
+		</script>
+	</body>
+</html>

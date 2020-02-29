@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				position: relative;
+				width: 300px;
+				height: 150px;
+				margin: 50px auto;
+				background-color: greenyellow;
+				text-align: center;
+				line-height: 150px;
+				font-size: 30px;
+				color: hotpink;
+				transition: 5s;
+			}
+			#box div{
+				position: absolute;
+				width: 0;
+				height: 30px;
+				background-color: skyblue;
+				transition: 5s;
+			}
+			#box .top{
+				left: 0;
+				top: 0;
+			}
+			#box .bottom{
+				right: 0;
+				bottom: 0;
+				color: darkgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			李易峰
+			<div class="top"></div>
+			<div class="bottom"></div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var divNodes = document.querySelectorAll('#box div');
+//				console.log(divNodes);
+				box.onmouseenter = function(){
+					divNodes[0].style.width = 300 + 'px';
+					divNodes[1].style.width = 300 + 'px';
+					divNodes[0].style.backgroundColor = 'black';
+					divNodes[1].style.backgroundColor = 'black';
+					this.style.backgroundColor = 'purple';
+					this.style.color = 'darkgreen';
+				};
+				box.onmouseleave = function(){
+					divNodes[0].style.width = 0;
+					divNodes[1].style.width = 0;
+					divNodes[0].style.backgroundColor = 'skyblue';
+					divNodes[1].style.backgroundColor = 'skyblue';
+					this.style.backgroundColor = 'greenyellow';
+					this.style.color = 'hotpink';
+				};
+			}
+		</script>
+	</body>
+</html>
