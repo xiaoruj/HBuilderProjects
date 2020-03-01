@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// var arr = [1,2,3,4];
+			//			Array.concat(); 
+			//			Array.prototype.concat();
+			//1、concat 拼接数组
+			//			var result = arr.concat();
+			//			console.log(result);
+			//			console.log(arr);
+			//2、arr.length
+			//			console.log(arr.length);
+			//3、数组的增删
+			//			var result = arr.push(100,200,[1,2,3]);
+			//			console.log(result);
+			//			console.log(arr);
+			//从末尾删
+			//			var result = arr.pop();
+			//			console.log(result);
+			//			console.log(arr);
+			//从头部去增
+			//			var result = arr.unshift(100,200,[1,2,3]);
+			//			console.log(result);
+			//			console.log(arr);
+			//从头部去删
+			//			var result = arr.shift();
+			//			console.log(result);
+			//			console.log(arr);
+			//删除
+			//			var result = arr.splice(1,2);
+			//			console.log(result);
+			//			console.log(arr);
+			//改
+			//			var result = arr.splice(2,1,300);
+			//			console.log(result);
+			//			console.log(arr);
+			//增
+			//			var result = arr.splice(2,0,3000,5000);
+			//			console.log(result);
+			//			console.log(arr);
+			//4、
+			//			var result = arr.join('');
+			//			console.log(result);
+			//			console.log(arr);
+
+			//5、数组翻转
+			//			var result = arr.reverse();
+			//			console.log(result);
+			//			console.log(arr);
+			//			console.log(result == arr);
+
+			//6、排序（不是冒泡排序）
+			// arr = [10,3,7,2,8];
+			// var result = arr.sort(function(a,b){
+			// 	return b - a;
+			// });
+
+			// console.log(result);
+			// console.log(arr);
+			// console.log(arr == result);
+			var str = '0987654#21234BFg';
+			console.log(str.charAt(8)); 
+			console.log(str.charCodeAt(9)); 
+			console.log(str.concat());    
+			console.log(String.fromCharCode(50)); 
+			console.log(str.lastIndexOf('23', 8)); 
+			str = '12A345678aB';
+			console.log(str.localeCompare('12345678')); 
+			console.log(str.slice(-6, -1)); 
+			console.log(str.substr(-5, 5));
+			console.log(str.substring(4, 2)); 
+
+			console.log(str.split('')); 
+			console.log(str.toLocaleLowerCase());
+			console.log(str.toLocaleUpperCase());
+			console.log(str.valueOf());
+			console.log(str.toString());
+			//			console.log(str.replace('1','**'));
+			//			console.log(str.search())
+			//			console.log(str.match(/1/g));
+			//	1.	includes(str) : 判断是否包含指定的字符串
+			console.log(str.includes('Z'));
+			//	2. 	startsWith(str) : 判断是否以指定字符串开头
+			console.log(str.startsWith('122'));
+			//	3. 	endsWith(str) : 判断是否以指定字符串结尾
+			console.log(str.endsWith('8ab'));
+			//	4. 	repeat(count) : 重复指定次数
+			console.log(str.repeat(-1));
+		</script>
+	</body>
+</html>

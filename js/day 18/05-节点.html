@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="list">
+			<li>我是列表项1</li>
+			<li>我是列表项2</li>
+			<li>我是列表项3</li>
+			<li>我是列表项4</li>
+			<li class="single">我是列表项5</li>
+			<li>我是列表项6</li>
+			<li>我是列表项7</li>
+			<li>我是列表项8</li>
+		</ul>
+		<script type="text/javascript">
+			window.onload = function(){
+				var ulNode = document.querySelector('.list');
+//				console.log(ulNode.childNodes);//拿到所有的子节点
+//				console.log(ulNode.children);
+//				console.log(ulNode.firstChild);//拿到第一个子节点
+//				console.log(ulNode.firstElementChild);
+//				console.log(ulNode.lastChild);//拿到最后一个子节点
+//				console.log(ulNode.lastElementChild);
+//				var liNode = document.querySelector('.single');
+//				console.log(liNode.previousSibling);//拿到上一个兄弟节点
+//				console.log(liNode.previousElementSibling);
+//				console.log(liNode.nextSibling);//拿到下一个兄弟节点
+//				console.log(liNode.nextElementSibling);
+				//兼容性封装获取元素的第一个子节点
+				function getFirstChildElementNode(node){
+					if(node.firstElementChild){
+						//高级
+						return node.firstElementChild;
+					}else{
+						//低级
+						var result = node.firstChild;
+						while(result!= null && result.nodeType != 1){
+							result = result.nextSibling;
+						}
+						return result;
+					}
+				}
+				var result = getFirstChildElementNode(ulNode);
+				console.log(result);
+			}
+		</script>
+	</body>
+</html>
