@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>我是列表项1</li>
+			<li>我是列表项2</li>
+			<li>我是列表项3</li>
+			<li>我是列表项4</li>
+			<li>我是列表项5</li>
+		</ul>
+		<button>添加</button>
+		<script type="text/javascript">
+			window.onload = function() {
+				var ulNode = document.querySelector('ul');
+				var liNodes = document.querySelectorAll('li');
+				var btn = document.querySelector('button');
+				//for(var i = 0; i < liNodes.length; i++){
+				//liNodes[i].onmouseover = function(){
+				// this.style.backgroundColor = 'red';
+				//};
+
+				//liNodes[i].onmouseout= function(){
+				//	this.style.backgroundColor = 'white';
+				//	};
+				//}
+
+
+
+				//btn.onclick = function(){
+				// var liNode = document.createElement('li');
+				// liNode.innerHTML = '我是新的';
+
+				// liNode.onmouseover = function(){
+				// 	this.style.backgroundColor = 'red';
+				// 	};
+
+				// 	liNode.onmouseout= function(){
+				// 		this.style.backgroundColor = 'white';
+				// 	};
+
+				// 	ulNode.appendChild(liNode);
+				// }
+				ulNode.onmouseover = function(e) {
+					e = e || window.event;
+					var target = e.target || e.srcElement;
+					if (target.nodeName == 'LI') {
+						target.style.backgroundColor = 'red';
+					}
+				};
+				ulNode.onmouseout = function(event) {
+					event = event || window.event;
+					var target = event.target || event.srcElement;
+					if (target.nodeName == 'LI') {
+						target.style.backgroundColor = 'white';
+					}
+				};
+				btn.onclick = function() {
+					var liNode = document.createElement('li');
+					liNode.innerHTML = '我是新的';
+					ulNode.appendChild(liNode);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.laoda{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				background-color: red;
+			}
+			
+			.laoer{
+				position: absolute;
+				/*left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;*/
+				
+				/*left: 50%;
+				top: 50%;
+				margin-left: -150px;
+				margin-top: -150px;*/
+				
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				
+				width: 300px;
+				height: 300px;
+				background-color: green;
+			}
+			
+			.laomo{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="laoda">
+			<div class="laoer">
+				<div class="laomo"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var laoda = document.querySelector('.laoda');
+				var laoer = document.querySelector('.laoer');
+				var laomo = document.querySelector('.laomo');
+				laomo.onclick = function(event){
+					console.log('我是老末');
+					event.stopPropagation();
+				}
+				
+				laoer.onclick = function(e){
+					console.log('我是老er');
+					e.stopPropagation();
+				}
+				
+				laoda.onclick = function(){
+					console.log('我是老da');
+					event.stopPropagation();
+				}
+				// document.body.onclick = function(){
+				// 	console.log('我是body');
+				// };
+				// document.documentElement.onclick = function(){
+				// 	console.log('我是html');
+				// };
+				// document.onclick = function(){
+				// 	console.log('我是祖宗');
+				// }
+				// laomo.addEventListener('click',function(){
+				// 	console.log('我是老末');
+				// },true);
+				// laoer.addEventListener('click',function(){
+				// 	console.log('我是老二');
+				// },true);
+				// laoda.addEventListener('click',function(){
+				// 	console.log('我是老大');
+				// },true);
+			}
+		</script>
+	</body>
+</html>
