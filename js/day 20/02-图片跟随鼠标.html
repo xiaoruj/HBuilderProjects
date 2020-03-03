@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			img {
+				display: block;
+				width: 100px;
+				/* height: 100px; */
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.jpg">
+		<script type="text/javascript">
+			window.onload = function() {
+				var imgNode = document.querySelector('img');
+				document.onmousemove = function(event) {
+					event = event || window.event
+					imgNode.style.left = event.clientX + 'px';
+					imgNode.style.top = event.clientY + 'px';
+				}
+			}
+		</script>
+	</body>
+</html>
