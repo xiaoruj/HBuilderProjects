@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul,li{
+				list-style: none;
+			}
+			input{
+				outline: none;
+			}
+			img{
+				display: block;
+			}
+			.clearFix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: skyblue;
+			}
+			#wrap .scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				height: 100%;
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				background-color: hotpink;
+			}
+			#wrap .scrollBar .scrollIn{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				width: 26px;
+				height: 100px;
+				background-color: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="scrollBar">
+				<div class="scrollIn"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>

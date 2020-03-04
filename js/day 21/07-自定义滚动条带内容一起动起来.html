@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			ul,li{
+				list-style: none;
+			}
+			
+			input{
+				outline: none;
+			}
+			
+			img{
+				display: block;
+			}
+			
+			.clearFix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			#wrap{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: skyblue;
+			}
+			
+			#wrap .content{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#wrap .scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				height: 100%;
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				background-color: hotpink;
+			}
+			
+			#wrap .scrollBar .scrollIn{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				width: 26px;
+				/*height: 100px;*/
+				background-color: greenyellow;
+				/*margin: 0 auto;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+			<div class="content">
+				
+			</div>
+			
+			<div class="scrollBar">
+				<div class="scrollIn"></div>
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var scrollIn = document.querySelector('#wrap .scrollBar .scrollIn');
+				//模拟内容区域，内容要比wrap的高度要高
+				var content = document.querySelector('#wrap .content');
+				
+				for(var i = 1; i < 200; i++){
+					content.innerHTML += i + '<br>';//content.innerHTML = content.innerHTML + 1 + <br>
+				}
+				
+				//动态设置滑块的高度
+//				自定义滚动条的万能比例：
+//				滑块的高度 / 滑槽的高度 = 滑槽的高度 / 内容的高度 = 滑块的滚动距离 / 内容的滚动距离
+				var scale = document.documentElement.clientHeight / content.offsetHeight;
+				scrollIn.style.height = document.documentElement.clientHeight * scale + 'px';
+				
+				
+				//滑块滚动逻辑和内容的滚动逻辑
+				scrollIn.onmousedown = function(event){
+					event = event || window.event;
+					var eleY = scrollIn.offsetTop;
+					var startY = event.clientY;
+					scrollIn.setCapture && scrollIn.setCapture();//对低版本浏览器设置全局捕获
+					document.onmousemove = function(event){
+						event = event || window.event;
+						var endY = event.clientY;
+						var disY = endY - startY;
+						var lastY = eleY + disY;
+						
+						//把滑块滑动的临界值加上
+						if(lastY > document.documentElement.clientHeight - scrollIn.offsetHeight){
+							lastY = document.documentElement.clientHeight - scrollIn.offsetHeight;
+						}else if(lastY < 0){
+							lastY = 0;
+						}
+						
+						scrollIn.style.top = lastY + 'px';//代表滑块滚动
+						
+						//让内容也跟着滚动
+						var contentDis = -lastY / scale;
+						content.style.top = contentDis + 'px';
+						
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						scrollIn.releaseCapture && scrollIn.releaseCapture();//对低版本浏览器释放全局捕获，全局捕获有设置就有释放，否则后果自负
+					}
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>

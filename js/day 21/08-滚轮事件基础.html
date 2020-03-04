@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		
+		<script type="text/javascript">
+			var box = document.querySelector('div');
+			box.addEventListener('mousewheel',scrollMove);
+			box.addEventListener('DOMMouseScroll',scrollMove);
+			var flag = true;
+			function scrollMove(event){
+				event = event || window.event;
+				if(event.wheelDelta){
+					if(event.wheelDelta > 0){
+						flag = true;
+					}else{
+						flag = false;
+					}
+				}else if(event.detail){
+					if(event.detail > 0){
+						flag = false;
+					}else{
+						flag = true;
+					}
+				}
+				if(flag){
+					box.style.height = box.offsetHeight - 10 + 'px';
+				}else{
+					box.style.height = box.offsetHeight + 10 + 'px';
+				}
+			}
+		</script>
+	</body>
+</html>

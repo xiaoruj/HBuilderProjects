@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul,li{
+				list-style: none;
+			}
+			input{
+				outline: none;
+			}
+			img{
+				display: block;
+			}
+			.clearFix:after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#wrap{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: skyblue;
+			}
+			#wrap .content{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#wrap .scrollBar{
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 30px;
+				height: 100%;
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				background-color: hotpink;
+			}
+			#wrap .scrollBar .scrollIn{
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 0;
+				width: 26px;
+				background-color: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="content">
+			</div>
+			<div class="scrollBar">
+				<div class="scrollIn"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var scrollIn = document.querySelector('#wrap .scrollBar .scrollIn');
+				var content = document.querySelector('#wrap .content');
+				for(var i = 1; i < 200; i++){
+					content.innerHTML += i + '<br>';
+				}
+				var scale = document.documentElement.clientHeight / content.offsetHeight;
+				scrollIn.style.height = document.documentElement.clientHeight * scale + 'px';
+				scrollIn.onmousedown = function(event){
+					event = event || window.event;
+					var eleY = scrollIn.offsetTop;
+					var startY = event.clientY;
+					scrollIn.setCapture && scrollIn.setCapture();
+					document.onmousemove = function(event){
+						event = event || window.event;
+						var endY = event.clientY;
+						var disY = endY - startY;
+						var lastY = eleY + disY;
+						if(lastY > document.documentElement.clientHeight - scrollIn.offsetHeight){
+							lastY = document.documentElement.clientHeight - scrollIn.offsetHeight;
+						}else if(lastY < 0){
+							lastY = 0;
+						}
+						scrollIn.style.top = lastY + 'px';
+						var contentDis = -lastY / scale;
+						content.style.top = contentDis + 'px';
+					};
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+						scrollIn.releaseCapture && scrollIn.releaseCapture();
+					}
+					return false;
+				}
+			document.addEventListener('mousewheel',scrollMove);
+			document.addEventListener('DOMMouseScroll',scrollMove);
+			var flag = true;
+			function scrollMove(event){
+				event = event || window.event;
+				if(event.wheelDelta){
+					if(event.wheelDelta > 0){
+						flag = true;
+					}else{
+						flag = false;
+					}
+				}else if(event.detail){
+					if(event.detail > 0){
+						flag = false;
+					}else{
+						flag = true;
+					}
+				}
+				if(flag){
+					var scrollDis = scrollIn.offsetTop - 10;
+					if(scrollDis < 0){
+						scrollDis = 0;
+					}
+					scrollIn.style.top =  scrollDis + 'px'
+					var contentDis = -scrollDis / scale;
+					content.style.top = contentDis + 'px';
+				}else{
+					var scrollDis = scrollIn.offsetTop + 10;
+					if(scrollDis > document.documentElement.clientHeight - scrollIn.offsetHeight){
+						scrollDis = document.documentElement.clientHeight - scrollIn.offsetHeight;
+					}
+					scrollIn.style.top =  scrollDis + 'px'
+					var contentDis = -scrollDis / scale;
+					content.style.top = contentDis + 'px';
+				}
+			}
+			}
+		</script>
+	</body>
+</html>
