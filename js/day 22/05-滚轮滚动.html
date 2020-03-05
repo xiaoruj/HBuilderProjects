@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
 		<title></title>
-		<style>
+		<style type="text/css">
 			*{
 				margin: 0;
 				padding: 0;
@@ -25,7 +25,6 @@
 				display: block;
 				clear: both;
 			}
-			
 			html,body{
 				height: 100%;
 				overflow: hidden;
@@ -58,9 +57,8 @@
 				transform: translateX(-50%);
 				top: 0;
 				width: 26px;
-				/*height: 100px;*/
+				height: 100px;
 				background-color: greenyellow;
-				/*margin: 0 auto;*/
 			}
 		</style>
 	</head>
@@ -106,6 +104,42 @@
 					}
 					return false;
 				}
+			document.addEventListener('mousewheel',scrollMove);
+			document.addEventListener('DOMMouseScroll',scrollMove);
+			var flag = true;
+			function scrollMove(event){
+				event = event || window.event;
+				if(event.wheelDelta){
+					if(event.wheelDelta > 0){
+						flag = true;
+					}else{
+						flag = false;
+					}
+				}else if(event.detail){
+					if(event.detail > 0){
+						flag = false;
+					}else{
+						flag = true;
+					}
+				}
+				if(flag){
+					var scrollDis = scrollIn.offsetTop - 10;
+					if(scrollDis < 0){
+						scrollDis = 0;
+					}
+					scrollIn.style.top =  scrollDis + 'px'
+					var contentDis = -scrollDis / scale;
+					content.style.top = contentDis + 'px';
+				}else{
+					var scrollDis = scrollIn.offsetTop + 10;
+					if(scrollDis > document.documentElement.clientHeight - scrollIn.offsetHeight){
+						scrollDis = document.documentElement.clientHeight - scrollIn.offsetHeight;
+					}
+					scrollIn.style.top =  scrollDis + 'px'
+					var contentDis = -scrollDis / scale;
+					content.style.top = contentDis + 'px';
+				}
+			}
 			}
 		</script>
 	</body>

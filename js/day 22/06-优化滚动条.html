@@ -25,11 +25,11 @@
 				display: block;
 				clear: both;
 			}
-			
 			html,body{
 				height: 100%;
 				overflow: hidden;
 			}
+			
 			#wrap{
 				position: relative;
 				width: 100%;
@@ -58,9 +58,7 @@
 				transform: translateX(-50%);
 				top: 0;
 				width: 26px;
-				/*height: 100px;*/
 				background-color: greenyellow;
-				/*margin: 0 auto;*/
 			}
 		</style>
 	</head>
@@ -105,6 +103,34 @@
 						scrollIn.releaseCapture && scrollIn.releaseCapture();
 					}
 					return false;
+				}
+				document.addEventListener('mousewheel',scrollMove);
+				document.addEventListener('DOMMouseScroll',scrollMove);
+				var step = 0;
+				function scrollMove(event){
+					event = event || window.event;
+					if(event.wheelDelta){
+						if(event.wheelDelta > 0){
+							step = -10;
+						}else{
+							step = 10;
+						}
+					}else if(event.detail){
+						if(event.detail > 0){
+							step = 10;
+						}else{
+							step = -10;
+						}
+					}
+					var scrollDis = scrollIn.offsetTop + step;
+					if(scrollDis > document.documentElement.clientHeight - scrollIn.offsetHeight){
+						scrollDis = document.documentElement.clientHeight - scrollIn.offsetHeight;
+					}else if(scrollDis < 0){
+						scrollDis = 0;
+					}
+					scrollIn.style.top =  scrollDis + 'px'
+					var contentDis = -scrollDis / scale;
+					content.style.top = contentDis + 'px';
 				}
 			}
 		</script>
