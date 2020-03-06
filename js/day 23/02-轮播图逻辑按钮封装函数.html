@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			img{
+				display: block;
+			}
+			#box{
+				position: relative;
+				width: 600px;
+				height: 300px;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			#box .list{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 3000px;
+				height: 300px;
+			}
+			#box .list li{
+				float: left;
+				width: 600px;
+				height: 300px;
+			}
+			#box .list li img{
+				width: 600px;
+				height: 300px;
+			}
+			#box .iconList{
+				position: absolute;
+				left: 50%;
+				bottom: 5px;
+				transform: translateX(-50%);
+			}
+			#box .iconList li{
+				float: left;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				border-radius: 50%;
+				background-color: grey;
+			}
+			#box .iconList li.current{
+				background-color: red;
+			}
+			#box span{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 50px;
+				height: 100px;
+				background-color: rgba(100,100,100,.7);
+				font-size: 40px;
+				text-align: center;
+				line-height: 100px;
+				color: #ffffff;
+				opacity: 0;
+				transition: opacity 2s;
+			}
+			#box .left{
+				left: 0;
+			}
+			#box .right{
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul class="list">
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/3.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+				<li><img src="img/5.jpg"/></li>
+			</ul>
+			<ul class="iconList">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<span class="left"> < </span>
+			<span class="right"> > </span>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var spanNodes = document.querySelectorAll('#box span');
+				var ulNode = document.querySelector('#box .list');
+				var timeAll = 600;
+				var perStepTime = 20;
+				var timer = null;
+				box.onmouseenter = function(){
+					spanNodes[0].style.opacity = 1;
+					spanNodes[1].style.opacity = 1;
+				};
+				box.onmouseleave = function(){
+					spanNodes[0].style.opacity = 0;
+					spanNodes[1].style.opacity = 0;
+				};
+				spanNodes[1].onclick = function(){
+					move(true);
+				}
+				spanNodes[0].onclick = function(){
+					move(false);
+				}
+				function move(flag){
+					if(flag){
+						var perClickDis = -600;
+					}else{
+						var perClickDis = 600;
+					}
+					var startX = ulNode.offsetLeft;
+					var lastX = startX + perClickDis;
+					var step = perClickDis / (timeAll / perStepTime);
+					timer = setInterval(function(){
+						var left = ulNode.offsetLeft + step;
+						if(left == lastX){
+							clearInterval(timer);
+						}
+						ulNode.style.left = left + 'px';
+					},perStepTime);
+				}
+			}
+		
+		</script>
+	</body>
+</html>

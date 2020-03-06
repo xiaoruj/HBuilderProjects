@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				//1、查找字符串当中是否有6
+				var str = 'sjfdgsk;alsdhidasjgd';
+//				var patt = /6/;//正则就是你要去查找或者判断的规则；
+//				console.log(patt);
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+//				var patt = new RegExp('6');
+//				console.dir(patt);
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+				//2、查找字符串当中是否包含数字
+//				var patt = /\d/;//\d代表的是一个数字
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+//				var patt = new RegExp('\\d');
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+				
+//				console.log('\n'); //‘\在字符串当中是转义的意思，它不是一个字符，它必须和其它的字符组成一个字符’
+//				console.log('\\');
+				
+				//3、字符串是否存在abcd；
+//				var patt = /abcd/;//\d代表的是一个数字
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+				
+				//4、字符串当中是否有字母
+//				var patt = /\w/;//使用\w代表一个单词字符
+//				var result = patt.test(str);//test是用来在字符串当中查找是否存在符合规则的字符串；
+//				console.log(result);
+				
+				//5、【】查找的是其中任意一个；
+				str = 'akuchfda';
+//				var patt = /[bc]/;
+//				var result = patt.test(str);
+//				console.log(result);
+				
+				//6、判断字符串是否包含4个连续数字
+				var patt = /\d{4}/;
+				var result = patt.test(str);
+				console.log(result);
+				
+				//7、判断字符串是不是一个11位的数字字符串
+				str = 'sdfgas11111111111111111adhgds';
+				var patt = /^\d{11}$/;
+				console.log(patt.test(str));
+				
+				//8、* + ？的含义；
+				str = 'sdfgasadhgds';
+//				var patt = /\d+/;//1个或者多个数字
+				var patt = /\d*/;//0个或者多个数字
+				var patt = /\d?/;//0个或者1个
+				console.log(patt.test(str));
+				
+				//9、（）分组，反向引用,判断字符串是不是符合规则的字符串
+				str = '111bb111bb111';
+				var patt = /^(\d{3})(\w{2})\1\2\1$/;
+				console.log(patt.test(str));
+				
+				//10、正则对象的方法
+				//匹配字符串当中三个连续数字
+				str = 'sjdga456ljasldkj123salfkjasldk';
+//				var patt = /\d{3}/;
+//				var result = patt.exec(str);
+//				console.log(result);
+				
+				//假设找到所有的匹配结果
+//				var patt = /\d{3}/g;//g代表全局匹配
+//				var result = patt.exec(str);
+//				console.log(result);
+//				while(result != null){
+//					result = patt.exec(str);
+//					console.log(result);
+//				}
+
+				//11、字符串的方法
+//				var str = 'lasdzhaoliyingsdkfjhaslk';
+//				var patt = /zhaoliying/;
+//				var result = str.search(patt);
+//				console.log(result);
+//				str = 'sjdga456ljasldkj123salfkjasldk';
+//				var patt = /\d{3}/g;
+//				var result = str.match(patt);
+//				console.log(result);	
+					
+//				str = '13456858798';//134****8798
+//				
+//				var patt = /\d{3}(\d{4})\d{4}/;
+////				console.log(str.match(patt)[1]);
+//				
+//				var result = str.replace(str.match(patt)[1],'****');
+//				console.log(result);
+				
+//				var str = 'asjdga12akjdhaks';
+//				if(str.search(/\d+/) != -1 ){
+//					console.log('i love you~');
+//				}
+				
+//				if(/\d{2,10}/.test(str)){
+//					console.log('i love you~');
+//				}
+				
+//				 12、判断手机号码是否合法
+				var str = '13025467894';
+				var patt = /^1[3-9]\d{9}$/;
+				console.log(str.search(patt));
+				console.log(patt.test(str));
+				
+//				 13、判断邮箱是否合法
+				var str = 'asdejh@qq.com';
+				var patt = /^\w{6,20}@(qq|126|163)\.(com|cn)$/;
+				console.log(patt.test(str));
+//				17、 从一篇文章当中匹配所有的电话号码
+				var str = 'sdfkjhaskdj13456765678ajdsksfjaskldjaasd13676542341sufsadhsjfkdhfdsk17867542345sjdhsk'
+				var patt = /1[3-9]\d{9}/g;
+				var result = str.match(patt);
+				console.log(result);
+			}
+		</script>
+	</body>
+</html>
