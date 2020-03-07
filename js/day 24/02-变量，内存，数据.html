@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1
+			var a = {n:1};
+			var b = a;
+			a.x = a = {n:2};
+			console.log(a.x);
+			// console.log(b.x);
+			//2
+			// var arr = [1,2,3]
+			// console.log(Array instanceof Object);
+			// console.log(arr instanceof Object);
+			//3
+			// function add(a,b){
+			// 	return a + b;
+			// }
+			// console.log(add instanceof Object);//true
+			// console.log(Object instanceof Object);//true
+			// console.log(1 instanceof Object);//f
+			// //4
+			// var b1 = {
+			// 	b2:[2,'liyifeng',console.log],
+			// 	b3:function(){
+			// 		alert('hello')
+			// 	}
+			// }
+			// console.log(b1,b1.b2,b1.b3)//
+			// 	  		console.log(b1 instanceof Object,typeof b1)//true  object
+			// 	  		console.log(b1.b2 instanceof Array,typeof b1.b2)//true object
+			// 	  		console.log(b1.b3 instanceof Function,typeof b1.b3)//true function
+			// 	  		console.log(typeof b1.b2[2]);// function
+			// 	  		console.log(typeof b1.b2[2]('atguigu'))
+			console.log(!1);
+			// function funcSwitch(sFlag){
+			// 	switch(sFlag){
+			// 		case 'Test1':
+			// 		alert('Test1');
+			// 		break;
+			// 		case 'Test2':
+			// 		alert('Test2');
+			// 		break;
+			// 		default:;
+			// 		}
+			// 	}
+			// 	funcSwitch('Test2');
+			var cars=['BMW','Volvo','Saab','Ford'];
+			var i=2,len=cars.length;
+			 for (; i<len; i++) {
+			 console.log(cars[i]);
+			 }
+
+		</script>
+	</body>
+</html>
