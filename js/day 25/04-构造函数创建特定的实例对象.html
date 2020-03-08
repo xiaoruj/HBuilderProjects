@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Person(name, age, gender) { //如果我们要把函数当构造函数用，首字母一般都是大写（大驼峰写法）
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				this.eat = function() {
+					console.log('吃饭');
+				}
+			}
+			var result = Person('liyifeng', 33, 'female'); //把函数当做普通函数用
+			var p1 = new Person('liyifeng', 33, 'female'); //把函数当构造函数用
+			console.log(p1);
+			//只有全局变量会作为window的属性对待
+			// var a = 10; 
+			// function add(a,b){
+			// 	console.log(this);//this代表着这个函数调用时候的执行者  window
+			// 	function fn(){ //fn和fn1只是在函数内部定义的函数而已，不是说fn和fn1就变为add的方法
+			// 		console.log(this);//window
+			// 		function fn1(){
+			// 			console.log(this);//
+			// 		}
+			// 		fn1();
+			// 	}
+			// 	fn();
+			// 	return a + b;
+			// }
+
+			// console.log(a);
+
+			// console.log(add(10,20));//window我们一般都是省略不写的
+
+
+			//			this常见的情景***********************************
+			//1、如果this在全局  永远是window
+			//2、如果this出现在函数（调用的时候直接加（））当中  内部的this也是指向window，所有的函数this都是window
+			//3、如果this出现在方法当中  内部的this指向的是这个方法的对象;
+			//4、如果this出现在构造函数（函数调用的时候加new和（））当中  内部的this指向的是准备实例化出来的对象
+			//5、如果函数调用使用了apply和call方法，那么这个函数内部this指向的对象是由我们指定的；
+			//6、如果this出现在事件回调函数当中  内部的this指向的是这个事件的事件源
+			//var obj = {
+			//	name:'zhaoliying',
+			//	eat:function(){
+			// 		console.log(this);
+			//	}
+			//}
+			// 		obj.eat();//这样是调用方法的时候 ，此时this指的是obj这个对象
+
+			// 	注意:在js当中,函数也可以称作是window对象的方法,因此很多人会说函数就是方法,方法就是函数
+		</script>
+	</body>
+</html>

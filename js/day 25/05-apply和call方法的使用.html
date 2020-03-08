@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//apply和call是函数对象的原型对象下的两个方法
+			//apply和call可以让一个对象快速的使用另外一个对象的方法
+			function Dog(name,color,age){
+				this.name = name;
+				this.color = color;
+				this.age = age;
+			}
+			function Car(name,color){
+				this.name = name;
+				this.color = color;
+			}
+			Dog.prototype.run = function(a,b){
+				console.log(this);
+				console.log('跑的很快'+a+b);
+			};
+//			Car.prototype.run = function(){
+//				console.log('跑的很快');
+//			}
+			var d1 = new Dog('金毛','grey',2);
+			var c1 = new Car('北京现代','red');
+			console.log(d1);
+			console.log(d1.run);
+			console.log(d1.run());
+			d1.run(500,'haha');//
+			//让c1借用d1的方法  去执行
+			//d1.run.apply(c1,[600,'haha']);
+			//apply 第一个参数  需要填写执行的让谁执行（指定一个对象）
+					//第二个参数  一个数组,数组内部是执行的这个方法的参数
+//			call
+			d1.run.call(c1,600,'haha');
+			//call和apply一共干了两件事：
+			//1、调用的时候首先会修改原来那个方法的this指向,相当于修改了这个方法的执行者
+			//2、修改完成后，这个方法是要自动执行的；
+		</script>
+	</body>
+</html>
