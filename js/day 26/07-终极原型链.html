@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Computer(name,brand,color,price){
+				this.name = name;
+				this.brand = brand;
+				this.color = color;
+				this.price = price;
+			}
+			Computer.prototype.writeCode = function(){
+				console.log('可以写代码');
+			};
+			Computer.prototype.playGame = function(){
+				console.log('可以玩游戏');
+			};
+			Computer.prototype.playMusic = function(){
+				console.log('可以放音乐');
+			};
+			var c1 = new Computer('拯救者','联想','black',6000);
+			c1.playGame();
+			console.log(Function.prototype === Function.__proto__);
+		</script>
+	</body>
+</html>

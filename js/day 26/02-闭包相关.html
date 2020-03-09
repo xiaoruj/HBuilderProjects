@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fn(){
+				var a = 0;
+				function fn1(){
+					a++;
+					console.log(a);
+				}
+				return fn1;
+			}
+			var f = fn();
+			f();//1
+			f();//2
+			f();//3
+			f = null;//清除闭包
+			var f2 = fn();
+			f2();
+			f2();
+			f2();
+			
+		</script>
+	</body>
+</html>
