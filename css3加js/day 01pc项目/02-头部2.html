@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="headerMain">
+					<!-- logo -->
+				<h1 class="logo">
+					<a href="javascript:;">
+						<img src="img/logo.png" >
+					</a>
+				</h1>
+				<!-- 导航 -->
+				<nav class="nav">
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<div class="up">
+									<img src="img/home_gruen.png" >
+								</div>
+								<div class="down">
+									<img src="img/home.png" >
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="up">课程</div>
+								<div class="down">课程</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="up">作品</div>
+								<div class="down">作品</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="up">关于</div>
+								<div class="down">关于</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="up">讲师团队</div>
+								<div class="down">讲师团队</div>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				</div>
+				<div class="arrow">
+					
+				</div>
+			</header>
+			<div class="content">
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function () {
+			//  获取元素
+			    var liNodes = document.querySelectorAll('#header .headerMain .nav li');
+			    var upNodes = document.querySelectorAll('#header .headerMain .nav li .up');
+			    var arrow = document.querySelector('.arrow');
+			
+			//    页面初始化
+			//     第一个up的宽度100%   小三角要显示在第一个li的下边
+			    upNodes[0].style.width = '100%';
+			//    当前li相对于屏幕左侧的距离+ li宽度的一半 - 小三角自身宽度的一半
+			    arrow.style.left = liNodes[0].getBoundingClientRect().left + liNodes[0].offsetWidth / 2
+			                    - arrow.offsetWidth / 2 +'px';
+			//  给li绑定单击事件   处理整个导航的高亮切换
+			    for (var i = 0; i < liNodes.length; i++) {
+			//        给每一个li添加索引
+			        liNodes[i].index = i;
+			        liNodes[i].onclick = function () {
+			//          up宽度切换
+			            for (var j = 0; j < upNodes.length; j++) {
+			                upNodes[j].style.width = ''
+			            }
+			                upNodes[this.index].style.width = '100%';
+			//          小三角位置切换
+			            arrow.style.left = liNodes[this.index].getBoundingClientRect().left +
+			                    liNodes[this.index].offsetWidth / 2 - arrow.offsetWidth / 2 + 'px';
+			        }
+			
+			    }
+			
+			}
+		</script>
+	</body>
+</html>
