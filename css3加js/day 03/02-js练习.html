@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<form>
+			姓名<input type="text" name="username" />
+			<br />
+			年龄<input type="text" name="age" />
+			<br />
+			性别：<input type="radio" name="sex" value="man" checked="checked" />男
+			<input type="radio" name="sex" value="woman" />女
+			<br />
+			<input type="button" value="添加到表格" onclick="add()" />
+		</form>
+		<table cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<th class="num">1</th>
+				<th>王信强</th>
+				<th>18</th>
+				<th>男</th>
+				<th><a href="javascript:void(0);" class="deltr">删除</a></th>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript" src="./jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			// var oTable = document.querySelector('table');
+			// var oInputs = document.getElementsByTagName('input');
+			// var trNodes = document.querySelectorAll('tr');
+			// var thNodes = document.querySelectorAll('th');
+			// var sTd = '<tr>' + oInputs[0].value +
+			// 	'</th><th>' + oInputs[1].value +
+			// 	'</th><th>' + oInputs[2].value +
+			// 	'</th><th>' + oInputs[3].value +
+			// 	'</th><th></v>' +
+			// 	'<th><a href="">删除</a></th>';
+			// trNodes.innerHTML = sTd;
+			// oTable.tBodies[0].appendChild(trNodes);
+			//  function deleteTr(a) {
+			//     var tr = a.parentNode.parentNode;
+			//     oTable.tBodies[0].removeChild(tr);
+			//    };
+			// var tbody = document.querySelector('tbody');
+			// var inputNodes = document.querySelectorAll('input');
+			// var Num = document.querySelectorAll('.num')
+			// Num =1;
+			// inputNodes[4].onclick = function() {
+			// 	var username = inputNodes[0].value;
+			// 	var age = inputNodes[1].value;
+			// 		if (username.trim() && age.trim()) {
+			// 			var trNode = document.createElement('tr');
+			// 			var thNum = document.createElement('th');
+			// 			Num++;
+			// 			thNum.innerHTML = Num;
+			// 			trNode.appendChild(thNum);
+			// 			var thName = document.createElement('th');
+			// 			thName.innerHTML = username;
+			// 			trNode.appendChild(thName);
+			// 			var thage = document.createElement('th');
+			// 			thage.innerHTML = age;
+			// 			trNode.appendChild(thage);
+			// 			var thgender = document.createElement('th');
+			// 			if (inputNodes[3].checked) {
+			// 				thgender.innerHTML = '女';
+			// 			} else if (inputNodes[2].checked) {
+			// 				thgender.innerHTML = '男';
+			// 			}
+			// 			trNode.appendChild(thgender);
+			// 			var thOperate = document.createElement('th');
+			// 			thOperate.innerHTML = '<a href="javascript:;">删除</a>';
+			// 			trNode.appendChild(thOperate);
+			// 			tbody.appendChild(trNode);
+			// 	inputNodes[0].value = '';
+			// 	inputNodes[1].value = '';
+			// }
+						
+						var oTable = document.querySelector('table')
+						var trNodes = document.querySelectorAll('tr');
+						var thNodes = document.querySelectorAll('th');
+						var tbody = document.querySelector('tbody');
+						var inputNodes = document.querySelectorAll('input');
+						var Num = document.querySelectorAll('.num')
+						Num =1;
+						inputNodes[4].onclick = function() {
+							var username = inputNodes[0].value;
+							var age = inputNodes[1].value;
+								if (username.trim() && age.trim()) {
+									var trNode = document.createElement('tr');
+									var thNum = document.createElement('th');
+									thNum.innerHTML = Num;
+									trNode.appendChild(thNum);
+									var thName = document.createElement('th');
+									thName.innerHTML = username;
+									trNode.appendChild(thName);
+									trNode.appendChild(thOperate);
+									tbody.appendChild(trNode)
+						}
+							function deleteTr(a) {
+						    var tr = a.parentNode.parentNode;
+						     oTable.tBodies[0].removeChild(tr);
+						  };
+
+		}
+	</script>
+</html>
