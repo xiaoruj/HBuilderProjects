@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript">
+    window.onload = function () {
+      var btn = document.getElementById('btn1');
+      btn.onclick = function () {
+        var user = document.getElementById('username');
+        alert(user.value);
+      }
+    }
+  </script>
+  <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('#btn2').click(function () {
+          alert($('#username').val());
+      })
+    })
+  </script>
+</head>
+<body>
+用户名: <input type="text" id="username">
+<button id="btn1">确定(原生版)</button>
+<button id="btn2">确定(jQuery版)</button>
+</body>
+
+</html>
