@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0px;
+		}
+
+		.div1 {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			top: 20px;
+			left: 10px;
+			background: blue;
+		}
+
+		.div2 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			/*top: 50px;*/
+			background: red;
+		}
+
+		.div3 {
+			position: absolute;
+			top: 250px;
+		}
+	</style>
+	<body>
+		<ul id="ul1">
+		  <li>AAAAA</li>
+		
+		  <li title="hello">BBBBB</li>
+		  <li class="box">CCCCC</li>
+		
+		  <li title="hello">DDDDDD</li>
+		  <li title="two">EEEEE</li>
+		  <li>FFFFF</li>
+		</ul>
+		<br>
+		<br>
+		<ul id="ul2">
+		  <li class="re">aaa</li>
+		  <li title="hello">bbb</li>
+		  <li class="box">ccc</li>
+		  <li title="hello">ddd</li>
+		  <li title="two">eee</li>
+		</ul>
+		<p>我是p标签</p>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			// 1. 向id为ul1的ul下添加一个span(最后)
+			$('#ul1').append('<span>我是append新增的标签</span>');
+			$('<span>我是append新增的标签</span>').appendTo('#ul1');
+			// 2. 向id为ul1的ul下添加一个span(最前)
+			$('#ul1').prepend('<span>我是prepend新增的标签</span>');
+			$('<span>我是prependTo新增的标签</span>').prependTo('#ul1');
+			// 3. 在id为ul1的ul下的li(title为hello)的前面添加span
+			$('#ul1 li[title=hello]').before('<span>我是before新增的标签</span>');
+			// 4. 在id为ul1的ul下的li(title为hello)的后面添加span
+			$('#ul1 li[title= hello]').after('<span>我是after新增的标签</span>');
+			// 5. 将在id为ul2的ul下的li(title为hello)全部替换为p
+			$('#ul2 li[title= hello]').replaceWith('<p>我是替换的p标签</p>')
+			// 6. 移除id为ul2的ul下的所有li
+			// $('#ul2').remover();
+			// $('#ul2 li').remover();
+			$('#ul2').empty();
+		</script>
+
+	</body>
+</html>

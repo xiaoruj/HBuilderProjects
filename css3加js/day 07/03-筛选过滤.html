@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>AAAAA</li>
+			<li title="hello" class="box2">BBBBB</li>
+			<li class="box">CCCCC</li>
+			<li title="hello" class="item">DDDDDD</li>
+			<li title="two"><span class="test">BBBBB</span></li>
+		</ul>
+		<li>eeeee</li>
+		<li>EEEEE</li>
+		<br>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			var $list = $('ul li');
+			// 1. ul下li标签第一个
+			// $list.first().css('background','pink');
+			// 2. ul下li标签的最后一个
+			// $list.last().css('background','pink');
+			// 3. ul下li标签的第二个
+			// $list.eq(1).css('background','pink');
+			// 4. ul下li标签中title属性为hello的
+			// $list.filter('[title= hello]').css('background','pink');
+			// 5. ul下li标签中title属性不为hello的
+			// $list.filter('[title!=hello]').css('background','pink');
+			// 6. ul下li标签中有span子标签的
+			$list.has('span').css('background','pink');
+		</script>
+	</body>
+</html>

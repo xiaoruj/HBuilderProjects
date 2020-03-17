@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<body>
+	<style type="text/css">
+		* {
+			margin: 0px;
+		}
+
+		.div1 {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			top: 20px;
+			left: 10px;
+			background: blue;
+			/*display: none;*/
+			/*visibility: hidden;*/
+			/*溢出隐藏*/
+			/*overflow: hidden;*/
+		}
+
+		.div2 {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 50px;
+			background: red;
+		}
+
+		.div3 {
+			position: absolute;
+			top: 250px;
+		}
+	</style>
+	<body style="height: 2000px;">
+		<div class="div1">
+			<div class="div2" style="display: none;">测试offset</div>
+		</div>
+		<div class='div3'>
+			<button id="btn1">读取offset和position</button>
+			<button id="btn2">设置offset</button>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			$('#btn1').click(function() {
+				console.log($('.div1').offset());
+				console.log($('.div2').offset());
+				console.log($('.div1').position());
+				console.log($('.div2').position());
+			})
+			$('#btn2').click(function() {
+				$('.div2').offset({
+					'left': 400,
+					'top': 200
+				})
+			})
+		</script>
 	</body>
 </html>
