@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body style="height: 2000px;">
+		<div class="box" style="border:1px solid black;width:100px;height:150px;overflow:auto">
+			This is some text. This is some text. This is some text. This is some text.
+			This is some text. This is some text. This is some text. This is some text.
+			This is some text. This is some text. This is some text. This is some text.
+			This is some text. This is some text. This is some text. This is some text.
+			This is some text. This is some text. This is some text. This is some text.
+			This is some text. This is some text. This is some text. This is some text.
+			his is some text.
+		</div>
+		<br>
+		<br>
+		<br>
+		<button id="btn1">得到scrollTop</button>
+		<button id="btn2">设置scrollTop</button>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			// 1. 得到div或页面滚动条的坐标
+			$('#btn1').click(function() {
+				// console.log($('.box').scrollTop())
+				// console.log($('body').scrollTop() + $('html').scrollTop())
+				// console.log($(document).scrollTop())
+
+			});
+			// 2. 让div或页面的滚动条滚动到指定位置
+			$('#btn2').click(function() {
+				$('.box').scrollTop(200);
+				$(document).scrollTop(200);
+			// 	$('body,html').scrollTop(200);
+			})
+			// $('#btn2').click(function() {
+			// 	$('.box').scrollTop(200);
+			// 	$('body,html').scrollTop(200);
+			// 	$(document).scrollTop(200);
+			// })
+		</script>
+	</body>
+</html>

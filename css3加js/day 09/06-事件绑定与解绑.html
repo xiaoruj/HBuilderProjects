@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0px;
+		}
+
+		.out {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			top: 20px;
+			left: 10px;
+			background: blue;
+		}
+
+		.inner {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 50px;
+			background: red;
+		}
+
+		.divBtn {
+			position: absolute;
+			top: 250px;
+		}
+	</style>
+
+	<body style="height: 2000px;">
+		<div class="out">
+		  外部DIV
+		  <div class="inner">内部div</div>
+		</div>
+		<div class='divBtn'>
+		  <button id="btn1">取消绑定所有事件</button>
+		  <button id="btn2">取消绑定mouseover事件</button>
+		
+		</div>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			// $('.out').click(function(){
+			// 	console.log('我是click绑定的单击事件')
+			// })
+			// $('.out').on('click',function(){
+			// 	console.log('我是on绑定的click事件1')
+			// })
+			
+			$('.inner').hover(function(){
+				console.log('移入')
+			},function(){
+				console.log('移除')
+			})
+			
+			$('#btn1').click(function(){
+				$('.inner').off();
+			})
+			
+			$('#btn2').click(function(){
+				$('.inner').off('mouseleave mouseenter')
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>

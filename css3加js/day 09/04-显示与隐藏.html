@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0px;
+		}
+
+		.div1 {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			top: 50px;
+			left: 10px;
+			background: red;
+			display: none;
+		}
+	</style>
+	<body>
+		<button id="btn1">瞬间显示</button>
+		<button id="btn2">慢慢显示</button>
+		<button id="btn3">慢慢隐藏</button>
+		<button id="btn4">显示隐藏切换</button>
+
+		<div class="div1">
+		</div>
+		<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+		<script type="text/javascript">
+			$('#btn1').click(function() {
+				$('.div1').show();
+			})
+			$('#btn2').click(function() {
+				$('.div1').show(2000);
+			})
+			$('#btn3').click(function() {
+				$('.div1').hide(2000)
+			})
+			$('#btn4').click(function() {
+				$('.div1').toggle(2000)
+			})
+		</script>
+	</body>
+</html>
