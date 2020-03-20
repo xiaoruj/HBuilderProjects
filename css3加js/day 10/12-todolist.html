@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<style type="text/css">
+			.todo-main li button {
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $todoMain = $('.todo-main');
+				var $checkAll = $('#checkAll');
+				var dataJson = [{
+					'content': '吃饭'
+				}, {
+					'content': '睡觉'
+				}, {
+					'content': '李易峰'
+				}];
+				var $todoMain = $('.todo-main');
+				var $checkAll = $('#checkAll');
+				function bindData(data) {
+					for (var i = 0; i < data.length; i++) {
+						$todoMain.append('<li class="todoItem" style="background: rgb(255, 255, 255);"><label>' +
+							'<input type="checkbox"><span>' + data[i].content + '</span></label>' +
+							'<button class="btn btn-danger" style="display: none;">删除</button></li>')
+					}
+					allTodos();
+				}
+				bindData(dataJson);
+				function allTodos() {
+					$('#allTodos').html($todoMain.children('li').length);
+				}
+				function allCompletedTodos() {
+					$('#allCompletedTodos').html($todoMain.find(':checkbox:checked').length)
+				}
+				$todoMain.delegate('.todoItem input', 'click', function() {
+					allCompletedTodos();
+					$checkAll.prop('checked', $todoMain.find(':checkbox:not(:checked)').length === 0)
+				});
+				$checkAll.click(function() {
+					$todoMain.find(':checkbox').prop('checked', this.checked);
+					allCompletedTodos();
+				});
+				$todoMain.delegate('.todoItem', 'mouseenter', function() {
+					$(this).css('background', '#ccc');
+					$(this).children('button').show();
+				});
+				$todoMain.delegate('.todoItem', 'mouseleave', function() {
+					$(this).css('background', '#fff');
+					$(this).children('button').hide();
+				});
+				$todoMain.delegate('.todoItem button', 'click', function() {
+					$(this).parent().remove();
+					allTodos();
+					allCompletedTodos();
+					$checkAll.prop('checked', $todoMain.children('li').length !== 0 &&
+						$todoMain.find(':checkbox:not(:checked)').length === 0)
+				})
+				$('#removeAllCompleted').click(function() {
+					$todoMain.find(':checkbox:checked').parent().parent().remove();
+					allTodos();
+					allCompletedTodos();
+					$checkAll.prop('checked', false);
+				})
+				$('#newTodo').keydown(function(event) {
+					if (event.keyCode == '13') {
+						if ($.trim($(this).val())) {
+							var data = [{
+								'content': $(this).val()
+							}];
+							bindData(data);
+							$checkAll.prop('checked', false)
+						} else {
+							alert('请不要输入空信息')
+						}
+						$(this).val('');
+					}
+				})
+
+			})
+		</script>
+	</head>
+	<body>
+		<div id="root">
+			<div class="todo-container">
+				<div class="todo-wrap">
+					<div class="todo-header">
+						<input id="newTodo" type="text" placeholder="请输入你的任务名称，按回车键确认" />
+					</div>
+					<ul class="todo-main">
+
+					</ul>
+					<div class="todo-footer">
+						<label>
+							<input id="checkAll" type="checkbox" />
+						</label>
+						<span>
+							已完成<span id="allCompletedTodos">0</span> / 全部<span id="allTodos">2</span>
+						</span>
+						<button id="removeAllCompleted" class="btn btn-danger">清除已完成任务</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
