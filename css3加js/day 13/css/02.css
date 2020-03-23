@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 500px;
+  height: 500px;
+  background: #ffc0cb;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.box .inner1 {
+  width: 400px;
+  height: 400px;
+  background: #ffa500;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.box .inner2 {
+  width: 200px;
+  height: 200px;
+  background: #9acd32;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.box .inner3 {
+  width: 50px;
+  height: 50px;
+  background: #ff0000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.wrap {
+  width: 1000px;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.wrap .hideBox {
+  width: 1050px;
+}
+.wrap .hideBox .item {
+  width: 300px;
+  height: 200px;
+  float: left;
+  background: pink;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}

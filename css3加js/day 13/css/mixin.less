@@ -1,0 +1,29 @@
+.allCenter(@w:50px,@h:50px,@bg:red){
+	width: @w;
+	height: @h;
+	background: @bg;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+};
+.wrap(){
+	.wrap{
+		width: 1000px;
+		border:1px solid #000;
+		overflow: hidden;
+		.hideBox{
+			width: 1050px;
+			.item{
+				width: 300px;
+				height: 200px;
+				float: left;
+				background: pink;
+				margin-right:50px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
