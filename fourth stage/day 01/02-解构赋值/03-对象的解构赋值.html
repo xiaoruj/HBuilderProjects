@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			{
+				let obj = {
+					name: "liyifeng",
+					sex: "男"
+				}
+				let {name, sex} = obj;
+				console.log(name, sex)//liyifeng 男
+			}
+			
+			{
+				let name = "li";
+				let age = 33;
+				let obj = {
+					name: name,
+					age: age
+				}
+				console.log(obj.name, obj.age)//li 33
+				let obj2 = {
+					name,
+					age
+				}
+				console.log(obj2.name, obj2.age)
+			}
+			
+			{
+				let obj = {
+					name: "li",
+					sex: "男"
+				};
+				let {name:a, sex: b} = obj;
+				console.log(a,b);//li 男
+			}
+			
+			{
+				let obj = {
+					name: "wang",
+					sex: "女"
+				};
+				let {sex, name} = obj;
+				console.log(sex,name);//女 wang
+			}
+			
+			{
+				let {x,y = 10, z} = {x: 1};
+				console.log(x,y,z)//1 10 undefined
+			}
+			
+			{
+				let obj = {
+					a:1,
+					b:2,
+					c: [4,5,6]
+				}
+				let{a,b,c: [c1, c2, c3] } = obj;
+				console.log(a,b,c1,c2,c3);//1 2 3 4 5 6
+			}
+			
+			{
+				let {log} = console;
+				log(1);//1
+			}
+			
+			{
+				let arr = ["a", "b", "c", "d", "e"];
+				let {0: first, [arr.length -1]: last } = arr;
+				console.log(first,last);//a e
+			}
+			
+			
+		</script>
+	</body>
+</html>

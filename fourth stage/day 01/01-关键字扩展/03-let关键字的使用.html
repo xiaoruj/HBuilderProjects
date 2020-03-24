@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// if(true){
+			// 	var a = 1;
+			// }
+			// if(true){
+			// 	let b = 2;
+			// }
+			// console.log(a);//1
+			// console.log(b);//报错
+			
+			// {
+			// 	let d = "李易峰";
+			// 	{
+			// 		{
+			// 			let c = "江疏影"
+			// 			console.log(c);//江疏影
+			// 		}
+			// 		console.log(d);//李易峰
+			// 		console.log(c);//报错
+			// 	}
+			// }
+			
+			// for (var i = 0; i < 5; i++){
+			// 	console.log(i);//0 1 2 3 4 
+			// }
+			// console.log(i);//5
+			
+			for(let i = 0; i < 5; i++){
+				let i = "a";
+				console.log(i);//a a a a a
+			}
+			
+			for(let i = 0; i < 5; i++){
+				setTimeout(function(){
+					console.log(i);//0 1 2 3 4
+				},1000)
+			}
+		</script>
+	</body>
+</html>

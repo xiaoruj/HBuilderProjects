@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fn1(){
+				return [1,2,3,4];
+			}
+			let [a,b,c,d] = fn1();
+			console.log(a,b,c,d)//1 2 3 4
+			
+			function fn2(){
+				return {
+					mouseLeft:80,
+					mouseTop:90
+				}
+			}
+			let {mouseLeft, mouseTop} = fn2();
+			console.log(mouseLeft, mouseTop);//80 90
+			
+			
+			let arr = [1,2,3,4]
+			function fn3([x,y,z,w]){
+				console.log(a,y,z,w)//1 2 3 4
+			}
+			fn3(arr);
+			
+			
+		</script>
+	</body>
+</html>

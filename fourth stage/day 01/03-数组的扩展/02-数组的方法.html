@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//some 遍历数组，判断  （一真即真）
+			//定义一组年龄
+			{
+				let arr = [18, 23, 45, 34, 12, 56];
+				//如果有一个人不满18岁，则不能打开此网页
+				let result = arr.some(function(item, index, arr) {
+					console.log(item, index, arr);//[18, 23, 45, 34, 12, 56]
+					return item < 18; 
+				})
+				console.log(result)//true
+				if (result) {
+					console.log("不能进")
+				}
+			}
+			//every 遍历数组 判断（一假即假）
+			{
+				let arr = [18, 23, 45, 34, 12, 56];
+				let result = arr.every(function(item, index, arr) {
+					return item >= 18;
+				})
+				console.log(result);//false
+				if (result) {
+					alert("欢迎光临")
+				}
+			}
+			
+			//forEach 遍历数组 没有返回值
+			{
+				//2020了 所有人的年龄加1岁，并赋值给新的数组
+				let arr = [18, 23, 45, 34, 12, 56];
+				let newArr = [];
+				arr.forEach(function(item, index, arr) {
+					newArr[index] = item + 1;
+				})
+				console.log(newArr);//19, 24, 46, 35, 13, 57
+			}
+			
+			//map 遍历数组（映射数组） 映射其实就是返回值
+			{
+				//2020了 所有人的年龄加1岁，并赋值给新的数组
+				let arr = [18, 23, 45, 34, 12, 56];
+				let newArr = arr.map(function(item, index, arr) {
+					return item + 1
+				});
+				console.log(newArr);//19, 24, 46, 35, 13, 57
+			}
+			
+			
+			//filter  数组过滤，把符合条件的值会返回出去 用变量接收
+			{
+				//筛选出数组中 小于30岁的年龄
+				let arr = [18, 23, 45, 34, 12, 56];
+				let newArr = arr.filter((item, index, arr) => {
+					return item < 30;
+				})
+				console.log(newArr);//[18, 23, 12]
+			}
+			
+			//reduce 累加器
+			{
+				//数组求和
+				let arr = [18, 23, 45, 34, 12, 56];
+				let result = 0;
+				arr.forEach((item) => {
+					result += item;
+				})
+				console.log(result);//188
+			}
+			
+			{
+				// 累加器方法求和  第一个参数是回调函数，第二个参数是初始值
+				let arr = [18, 23, 45, 34, 12, 56];
+				let result = arr.reduce((prev, item, index, arr) => {
+					// console.log(prev, item, index, arr);
+					return prev + item;
+				}, 0)
+				console.log(result);//188
+			}
+			
+			
+		</script>
+	</body>
+</html>

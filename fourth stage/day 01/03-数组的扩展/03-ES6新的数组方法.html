@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			{
+				let oLi = document.getElementsByTagName("li");
+				console.log(oLi)
+				for (let i in oLi) {
+					// oLi[i].style.background = "red";报错
+				}
+			}
+			
+			{
+				let oLi = document.getElementsByTagName("li");
+				// oLi.forEach((item, index, arr) => {
+				// item.style.background = "red";
+				// });
+			
+				//之前伪数组解决调用数组方法的方法
+				// [].forEach.call(oLi, function (item, index, arr) {
+				    // item.style.background = "red";
+				// })
+			}
+			
+			{
+				let oLi = document.getElementsByTagName("li");
+				oLi = Array.from(oLi);
+				console.log(oLi);
+				for (let i in oLi) {
+					oLi[i].style.background = "red"; 
+				}
+			}
+			
+			{
+				let arr = new Array(3);
+				console.log(arr);
+			}
+			{
+				let arr = Array.of(3);
+				console.log(arr);//[3]
+				let arr2 = Array.of(1,2,3,4);
+				console.log(arr2);//[1, 2, 3, 4]
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
