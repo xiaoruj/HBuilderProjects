@@ -1,0 +1,57 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			{
+				 let obj = {
+				    name: name,
+				    sex: "sex",
+				    age: age
+				}
+				let obj2 = {
+				    name,
+				    sex: "sex",
+				    age
+				} 
+			}
+
+			{
+				let obj = {
+					name: name,
+					todo: function() {
+						console.log("todo somethimg")
+					}
+				}
+
+				let obj2 = {
+					name,
+					todo() {
+						console.log("todo somethimg")
+					}
+				}
+			}
+			{
+				let obj = {
+					name: "lily"
+				}
+				obj.name;
+				obj["name"]
+			} {
+				let a = "name";
+				let obj = {
+					[a]: "lily"
+				}
+				console.log(obj.name); //lily
+				console.log(obj['name']); //lily
+				console.log(obj[a]); //lily
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,45 @@
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			const {log} = console;
+			{
+				let message = "      hello    world      ";
+				log(message);
+				log(message.trim());
+				log(message.trimStart());
+				log(message.trimEnd());
+			}
+
+			{
+				let message = "hello    world";
+				log(message);
+				log(message.startsWith("hello")); //true
+				log(message.endsWith("world")); ////true
+				log(message.endsWith("ld")); //true
+				log(message.includes("ld")); //true
+				log(message.includes("or")); //true
+				log(message.includes("你好啊")); //false
+			}
+			
+			{
+				let message = "刘诗诗";
+				log(message.repeat(10));
+			} 
+			
+			{
+				let message = "这个是密码";
+				log(message.padStart(8, '#'))
+				log(message.padEnd(8, '#'))
+				log(message.padStart(8, '#*2222'))
+			}
+		</script>
+	</body>
+
+</html>
