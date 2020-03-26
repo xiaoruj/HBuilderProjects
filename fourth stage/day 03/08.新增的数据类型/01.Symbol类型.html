@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			{
+				let obj1 = {
+					name: "lily", 
+					age: 18
+				}
+
+				obj1.name = "李";
+				console.log(obj1);
+			}
+
+			{
+				let obj1 = {
+					name: "lily", 
+					age: 18,
+					todo() {
+						console.log("do eat");
+					}
+
+				}
+				let name = Symbol();
+				console.log(typeof name);
+				let age = Symbol();
+				console.log(Symbol() == Symbol()) //fasle
+
+				obj1[name] = "xiaowang";
+				console.log(obj1)
+
+				console.log(obj1[name]) //xiaowang
+
+				console.log(obj1.name) //lily
+				console.log(obj1['name']); //lily
+			}
+
+			{
+				let obj1 = {
+					name: "lily", 
+					age: 18,
+					todo() {
+						console.log("do eat");
+					}
+				}
+				let todo = Symbol();
+				obj1[todo] = function() {
+
+				}
+				console.log(obj1)
+			}
+		</script>
+	</body>
+
+</html>

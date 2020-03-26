@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+<body>
+    <script type="text/javascript">
+        let arr = [1, 2, 3, 4];
+        function Iterator(arr) {
+            let index = 0;
+            return {
+                next() {
+                    if (index < arr.length) {
+                        return {
+                            done: false,
+                            value: arr[index++]
+                        }
+                    } else {
+                        return {
+                            done: true,
+                            value: undefined
+                        }
+                    }
+                }
+            }
+        }
+
+        let it = Iterator(arr);
+        console.log(it);
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+    </script>
+</body>
+
+</html>

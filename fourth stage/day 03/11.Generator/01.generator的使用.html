@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function* gen() {
+				yield "状态1";
+				yield "状态2";
+				yield "状态3";
+				yield "状态4";
+				yield "状态5";
+			}
+			console.log(gen());
+			let it = gen();
+			console.log(it.next());
+			console.log(it.next());
+			console.log(it.next());
+			console.log(it.next());
+			console.log(it.next());
+			console.log(it.next());
+			console.log(it.next());
+		</script>
+	</body>
+
+</html>

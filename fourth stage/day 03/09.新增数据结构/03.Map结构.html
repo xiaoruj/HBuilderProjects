@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			{
+				let a = "sex";
+				let o1 = {
+					foo: "foo"
+				};
+				let o2 = {
+					hoo: "hoo"
+				};
+				const obj = {
+					name: "lily",
+					[a]: 19,
+					[o1]: "hello",
+					[o2]: "world"
+				}
+				console.log(obj["[object Object]"])
+				console.log(obj[o1]) 
+				console.log(obj[o2])
+			}
+			{
+				let map1 = new Map([
+					['a', 1],
+					["b", 2]
+				]);
+				console.log(map1)
+			}
+
+			{
+				let o1 = {};
+				let o2 = {};
+				let map1 = new Map([
+					[o1, "hello"],
+					[o2, "world"]
+				])
+				console.log(map1);
+				console.log(map1.get(o1)); 
+			}
+		</script>
+	</body>
+
+</html>

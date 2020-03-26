@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/* {
+            let obj1 = { name: "lily" };
+            let obj2 = {};
+            for (let attr in obj1) {
+                obj2[attr] = obj1[attr];
+            }
+            obj2.sex = "女";
+            console.log(obj1);
+            console.log(obj2);
+        } */
+
+
+			/* {
+			    function Person(name, age) {
+			        this.name = name;
+			        this.age = age;
+			    }
+			    Person.prototype.todo = () => {
+			        console.log("学习")
+			    }
+
+			    function Child(name, age) {
+			        Person.call(this, name, age)
+			    }
+			    const c1 = new Child("lily", 22)
+			    console.log(c1)
+			} */
+
+
+			{
+				class Person {
+					constructor(name, age) {
+						this.name = name;
+						this.age = age;
+					}
+					do() {
+						console.log(study);
+					}
+				}
+				class Child extends Person {
+					constructor(name, age, gender) {
+						super(name, age);
+						this.gender = gender;
+					}
+				}
+
+				const c1 = new Child("lily", 22, "女");
+				console.log(c1)
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">点击我抽奖</button>
+		<script type="text/javascript">
+			let oBtn = document.querySelector("#btn");
+			let it = gen();
+			oBtn.onclick = () => {
+				it.next();
+			}
+
+			function draw(count) {
+				alert(`还剩下${count - 1}次机会`)
+			}
+
+			function* gen() {
+				console.log(1);
+				yield draw(5);
+				console.log(2222);
+				yield draw(4);
+				console.log(3333);
+				yield draw(3);
+				yield draw(2);
+				yield draw(1);
+			}
+		</script>
+	</body>
+
+</html>
