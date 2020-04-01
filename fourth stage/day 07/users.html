@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户的列表</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        h2 {
+            color: #2a6;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-xs-6 col-xs-offset-3">
+        <h2>用户列表</h2>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<script>
+    //动态创建 tr 标签
+    const arr = [
+        {name: '李易峰', age: 33},
+        {name: '杨紫', age: 28},
+        {name: '张一山', age: 25},
+        {name: '杨幂', age: 34},
+        {name: '刘诗诗', age: 33},
+        {name: '吴奇隆', age: 50},
+    ];
+
+    //获取所有的 tr 标签元素
+    let trs = document.querySelectorAll('tr');
+
+    //遍历
+    for (let i = 0; i < trs.length; i++) {
+        if (i % 2 === 0) {
+            trs[i].style.background = '#582';
+        } else {
+            trs[i].style.background = '#a85';
+        }
+    }
+</script>
+</body>
+</html>

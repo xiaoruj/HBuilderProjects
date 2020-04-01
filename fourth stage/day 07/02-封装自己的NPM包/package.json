@@ -1,0 +1,11 @@
+{
+  "name": "request-function",
+  "version": "1.0.0",
+  "description": "这是一个用来生成随机数的函数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaoruj",
+  "license": "ISC"
+}
