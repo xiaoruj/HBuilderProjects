@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+</head>
+<body>
+    <h2><%= title %></h2>
+    <h3>欢迎您回来 <%= username %></h3>
+    <table>
+        <tr><td>姓名</td><td>年龄</td></tr>
+        <% for(let i=0;i<arr.length;i++){ %>
+        <tr><td><%= arr[i].name %></td><td><%= arr[i].age %></td></tr>
+        <% } %>
+    </table>
+</body>
+</html>
