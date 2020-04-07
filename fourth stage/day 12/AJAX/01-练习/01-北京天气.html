@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            width:400px;
+            height:200px;
+            border:solid 1px #aaa;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-primary">点击查看北京天气</button>
+    <div id="result">
+        城市: <span id="city"></span><br>
+        天气: <span id="weather"></span>
+    </div>
+</div>
+<script>
+    let btn = document.querySelectorAll('button');
+    let result = document.querySelector("#result");
+    let city = document.querySelector("#city");
+    let weather = document.querySelector("#weather");//
+    btn[0].onclick = function(){
+        let x = new XMLHttpRequest();
+        x.onreadystatechange = function(){
+            if(x.readyState === 4 && x.status === 200){
+                let data = JSON.parse(x.responseText);
+                console.log(data.data[0].wea);
+                city.innerHTML = data.city;
+                weather.innerHTML = data.data[0].wea;
+            }
+        }
+        x.open('GET', '/get-weather');
+        x.send();
+    }
+</script>
+</body>
+</html>

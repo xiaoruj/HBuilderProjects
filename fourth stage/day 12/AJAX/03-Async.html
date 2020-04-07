@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX-ASYNC</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            width:400px;
+            height:200px;
+            border:solid 1px #aaa;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">AJAX演示</h2>
+    <button class="btn btn-primary">点击按钮向服务器发送 异步 请求</button>
+    <button class="btn btn-danger">点击按钮向服务器发送 同步 请求</button>
+    <div id="result"></div>
+</div>
+<script>
+    let btn = document.querySelectorAll('button');
+    let result = document.querySelector("#result");
+    btn[0].onclick = function () {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                result.innerHTML = xhr.responseText;
+                console.log(1111111);
+            }
+        }
+        xhr.open('GET', '/async-server');
+        xhr.send();
+        console.log(222222);
+    }
+
+    btn[1].onclick = function () {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                result.innerHTML = xhr.responseText;
+                console.log(1111111);
+            }
+        }
+        xhr.open('GET', '/async-server', false);
+        xhr.send();
+        console.log(222222);
+    }
+
+    </script>
+</body>
+</html>

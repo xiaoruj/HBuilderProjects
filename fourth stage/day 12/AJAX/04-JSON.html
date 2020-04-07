@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            width:400px;
+            height:200px;
+            border:solid 1px #aaa;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">AJAX演示</h2>
+    <button class="btn btn-primary">处理 JSON 数据</button>
+    <div id="result">
+        <h3></h3>
+        <p></p>
+</div>
+<script>
+    let btn = document.querySelectorAll('button');
+    let result = document.querySelector("#result");
+    let h1 = document.querySelector("h3");
+    let p = document.querySelector("p");
+    btn[0].onclick = function(){
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                let data = JSON.parse(xhr.responseText);
+                h1.innerHTML = data.from;
+                p.innerHTML = data.hitokoto;
+            }
+        }
+        xhr.open('GET', '/json-server');
+        xhr.send();
+    }
+
+    </script>
+</body>
+</html>
