@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result{
+            width:400px;
+            height:200px;
+            border:solid 1px #099;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-warning">点击发送请求跨域获取数据</button>
+    <hr>
+    <div id="result">
+
+    </div>
+    <script>
+        const result = document.querySelector('#result');
+        const btn = document.getElementsByClassName('btn')[0];
+
+        function handle_1214151251o2u12o312o31(data){
+            result.innerHTML = data;
+        }
+
+        btn.addEventListener('click', function(){
+            let script = document.createElement('script');
+            script.src = 'http://127.0.0.1:8000/server?callback=handle_1214151251o2u12o312o31';
+            document.body.appendChild(script);
+        });
+
+    </script>
+</body>
+</html>

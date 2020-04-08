@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX封装</title>
+</head>
+<body>
+<script>
+    let $ = {
+        get: function(url, data={}, callback){
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    callback(xhr.responseText);
+                }
+            }
+            let str = this.formatData(data);
+            url += "?"+str;
+            xhr.open('GET', url);
+            xhr.send();
+        },
+        post: function(url, data={}, callback){
+            let x = new XMLHttpRequest();
+            x.onreadystatechange = function(){
+                if(x.status === 200 && x.readyState === 4){
+                    callback(x.responseText);
+                }
+            }
+            x.open('POST', url);
+            let str = this.formatData(data);
+            x.setRequestHeader('content-type','application/x-www-form-urlencoded');
+            x.send(str);
+        },
+        formatData(data){
+            let str = '';
+            for(let i in data){
+                str += `${i}=${data[i]}&`;
+            }
+            return str.substr(0, str.length - 1);
+        }
+    }
+
+    $.get('https://api.apiopen.top/getJoke', {type:'text',id:100}, function(data){
+        console.log(data);
+    });
+
+    $.post('https://api.apiopen.top/getJoke', {type:'text',id:100}, function(data){
+        console.log(data);
+    });
+</script>
+
+</body>
+</html>
