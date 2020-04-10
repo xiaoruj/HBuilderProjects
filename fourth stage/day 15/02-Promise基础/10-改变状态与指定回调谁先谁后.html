@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题</title>
+</head>
+<body>
+<script>
+     var p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('成功的值, I love you 李易峰');
+        }, 2000);
+    });
+
+    p.then(value => {
+        console.log(value);
+    }, reason => {
+        console.error(reason);
+    });
+
+    // console.log(1111);
+    // setTimeout(() => {
+    //     p.then(value => {
+    //         console.log(value);
+    //     }, reason => {
+    //         console.error(reason);
+    //     });
+    // }, 3000)
+
+    var p2 = new Promise((resolve, reject) => {
+        // console.log(2222);
+        resolve('成功的见到李易峰');
+    });
+
+    // console.log(1111);
+    p2.then(value => {
+        console.log(value);
+    }, reason => {
+        console.error(reason);
+    });
+</script>
+</body>
+</html>

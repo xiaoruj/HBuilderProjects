@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS错误处理</title>
+</head>
+<body>
+<script>
+    try{
+        // console.log(aaaaa);
+        let b = 100;
+        let c = 0;
+        if(c === 0){
+            throw new Error('除数不能为0');
+        }
+        let res = b / c;
+        console.log(res);
+    }catch(e){
+        console.log(e);
+        console.log(e.message);
+        console.log(e.stack);
+    }
+    console.log('ccccc')
+</script>
+</body>
+</html>

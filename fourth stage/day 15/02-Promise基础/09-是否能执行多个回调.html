@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问题</title>
+</head>
+<body>
+<script>
+    let p = new Promise((resolve,reject) =>{
+        setTimeout(() => {
+            resolve('我能成功见到李易峰');
+        },1000);
+    });
+    p.then(value => {
+        console.log(value);
+    }, reason => {
+        console.error(reason);
+    });
+    p.then(value => {
+        alert(value);
+    }, reason => {
+        alert(value);
+    });
+</script>
+</body>
+</html>

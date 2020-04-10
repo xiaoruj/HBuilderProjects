@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变promise对象状态</title>
+</head>
+<body>
+<script>
+    let p = new Promise((resolve,reject)=>{
+        resolve('OK,加油');
+        // reject('error');
+        // throw new Error('出错啦!!');
+    })
+    console.log(p);
+</script>
+</body>
+</html>

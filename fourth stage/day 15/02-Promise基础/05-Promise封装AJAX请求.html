@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise封装AJAX请求</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<button id="abc">点击发送AJAX请求</button>
+<script>
+    function promiseAJAX(url){
+        return new Promise((resolve, reject) => {
+            let x = new XMLHttpRequest();
+            x.onreadystatechange = function () {
+                if (x.readyState === 4) {
+                    if (x.status === 200) {
+                        resolve(x.responseText);
+                    } else {
+                        reject(x.status);
+                    }
+                }
+            }
+            x.open('GET', url);
+            x.send();
+        });
+    }
+
+    abc.onclick = function (){
+        let url = 'https://www.tianqiapi.com/api/?version=v1&city=%E5%8C%97%E4%BA%AC&appid=23941491&appsecret=TXoD5e8P';
+        promiseAJAX(url).then(value => {
+            let data = JSON.parse(value)
+            console.log(data);
+        },reason => {
+            console.warn(reason);
+        });
+    }
+
+</script>
+</body>
+</html>
