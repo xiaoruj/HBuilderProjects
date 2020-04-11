@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise处理同步任务</title>
+    <script src="Promise.js"></script>
+</head>
+<body>
+
+<script>
+    let p = new Promise((resolve, reject)=>{
+        resolve('李易峰输出成功');
+        // reject('李易峰输出失败!!!');
+    });
+    p.then(
+            value=>{
+                console.log(value);
+            },
+             reason =>{
+                console.log(reason);
+             }
+    )
+    p.then(
+            value=>{
+                alert(value);
+            },
+             reason =>{
+                alert(reason);
+             }
+    )
+</script>
+</body>
+</html>
