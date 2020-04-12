@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise处理同步任务</title>
+    <script src="Promise.js"></script>
+</head>
+<body>
+
+<script>
+    let p = new Promise((resolve, reject)=>{
+        // resolve('李易峰输出成功');
+        // reject('李易峰输出失败!!!');
+        // setTimeout(() => {
+            resolve('成功啦啦啦1');
+            // reject('失败了');
+        // },1000);
+    });
+    p.then(
+        value => {
+            console.log(11);
+            return new Promise((resolve, reject)=>{});
+        }
+    ).then(
+        value => {
+            console.log(222);
+        }
+    ).then(
+        reason => {
+            console.log(3333);
+        }
+    ).catch(
+        value => {
+            console.error(reason);
+        }
+    )
+    // p.then(
+    //     value => {
+    //         // return new Promise((resolve, reject) => {
+    //             resolve('ok');
+    //         // });
+    // },
+    // reason => {
+    //         // return new Promise((resolve, reject) => {
+    //            // resolve('ok');
+    //             // reject('error');
+    //         });
+    // }
+    // ).then(
+    //         value=>{
+    //             console.log(value);
+    //             // console.log(111);
+    //         },
+    //          reason =>{
+    //             console.error(reason);
+    //          }
+    // )
+    // p.then(
+    //         value=>{
+    //             alert(value);
+    //         },
+    //          reason =>{
+    //             alert(reason);
+    //          }
+    // )
+</script>
+</body>
+</html>
