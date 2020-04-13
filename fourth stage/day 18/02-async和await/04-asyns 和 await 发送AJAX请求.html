@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sendAjax(url) {
+        return new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4){
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.responseText);
+                    } else {
+                        reject(xhr.status);
+                    }
+                }
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        });
+    }
+    async function main() {
+        try {
+            let result = await sendAjax('https://api.apiopen.top/getJokesss');
+            let data = JSON.parse(result);
+            console.log(data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    main();
+</script>
+</body>
+</html>
