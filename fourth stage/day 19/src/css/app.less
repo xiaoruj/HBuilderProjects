@@ -1,0 +1,52 @@
+@base-color: #896aba;
+@dark-color: #39a;
+
+html, body {
+  height: 2000px;
+  background: linear-gradient(to bottom, @base-color, @dark-color);
+}
+
+.vue {
+  width: 100px;
+  height: 100px;
+  background: url('../images/vue.png') no-repeat;
+  background-size: 100%;
+  float: left;
+  margin-right:20px;
+}
+
+.react {
+  width: 100px;
+  height: 100px;
+  background: url('../images/react.png') no-repeat;
+  background-size: 100%;
+  float: left;
+}
+//
+h2 {
+  clear: both;
+}
+//
+@font-face {
+  font-family: 'iconfont';
+  src: url('../fonts/iconfont.eot');
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/iconfont.woff2') format('woff2'),
+  url('../fonts/iconfont.woff') format('woff'),
+  url('../fonts/iconfont.ttf') format('truetype'),
+  url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+//
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+//
+.iconfont{
+  color:#eaf;
+  font-weight:bold;
+  font-size:40px;
+}
