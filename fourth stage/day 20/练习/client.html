@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn" onclick="send()">发送</button>
+<h2>新闻列表</h2>
+<ul id="newsList">
+
+</ul>
+<script>
+    let newList = document.getElementById('newsList');
+    function send() {
+        let x = new XMLHttpRequest();
+        x.onreadystatechange = function () {
+            if (x.readyState === 4 && x.status === 200){
+                let data = JSON.parse(x.responseText);
+                for(let i = 0; i < data.data.length; i++){
+                    let li = document.createElement('li');
+                    li.innerHTML = data[i].title;
+                    newsList.appendChild(li);
+                }
+            }
+        }
+        x.open('GET', 'http://127.0.0.1:8000/news');
+        x.send();
+    }
+</script>
+</body>
+</html>
