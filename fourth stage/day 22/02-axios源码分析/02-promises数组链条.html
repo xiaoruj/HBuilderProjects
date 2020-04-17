@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function InterceptorManage(){
+           this.handlers = [];
+       } 
+       InterceptorManager.prototype.use = function (onResolved, onRejected) {
+        this.handlers.push({onResolved: onResolved, onRejected: onRejected});
+    };
+    function Axios(config) {
+        this.default = config;
+        this.interceptors = {
+            request: new InterceptorManager,
+            response: new InterceptorManager
+        }
+    }
+    Axios.prototype.request = function (config) {
+        let dispatchRequest = function () {
+            return Promise.resolve('成功的数据'); // 模拟 AJAX 请求发送并得到的成功 promise
+        }
+        let chains = [dispatchRequest, undefined];
+        this.interceptors.request.handlers.forEach(fnObj => {
+            chains.unshift(fnObj.onResolved, fnObj.onRejected);
+        });
+        this.interceptors.response.handlers.forEach(fnObj => {
+            chains.push(fnObj.onResolved, fnObj.onRejected);
+        });
+        let promise = Promise.resolve(config);
+        //
+        while(chains.length > 0){
+            promise = promise.then(chains.shift(), chains.shift());
+        }
+
+        return promise;
+    };
+    let axios = new Axios({});
+
+    axios.interceptors.request.use(function (config1) {
+        console.log("请求拦截器 - 成功 - 1号");
+        return config1;
+    }, function (error1) {
+        console.log("请求拦截器 - 失败 - 1号");
+        return Promise.reject(error1);
+    });
+    axios.interceptors.request.use(function (config2) {
+        console.log("请求拦截器 - 成功 - 2号");
+        throw new Error('出错啦!!!');
+        return config2;
+    }, function (error2) {
+        console.log("请求拦截器 - 失败 - 2号");
+        return Promise.reject(error2);
+    });
+
+    axios.interceptors.response.use(function (response1) {
+        console.log('响应拦截器 - 成功 - 1号')
+        return response1;
+    }, function (error1) {
+        console.log('响应拦截器 - 失败 - 1号')
+        return Promise.reject(error1);
+    });
+    axios.interceptors.response.use(function (response2) {
+        console.log('响应拦截器 - 成功 - 2号');
+        return response2;
+    }, function (error2) {
+        console.log('响应拦截器 - 失败 - 2号')
+        return Promise.reject(error2);
+    });
+
+    let url = 'https://www.tianqiapi.com/api/?version=v1&city=%E5%8C%97%E4%BA%AC&appid=23941491&appsecret=TXoD5e8P';
+    axios.request({
+        url: url
+    });
+    </script>
+</body>
+</html>

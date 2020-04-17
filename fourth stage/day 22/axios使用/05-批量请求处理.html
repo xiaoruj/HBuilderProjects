@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+
+</head>
+<body>
+<script>
+    let u1 = 'http://localhost:8000/test-url-1';
+    let u2 = 'http://localhost:8000/test-url-2';
+    let u3 = 'http://localhost:8000/test-url-3';
+    let p1 = axios.get(u1);
+    let p2 = axios.get(u2);
+    let p3 = axios.get(u3);
+    axios.all([p1, p2, p3]).then(axios.spread(function (v1, v2, v3){
+        console.log(v1);
+        console.log(v2);
+        console.log(v3);
+    }))
+</script>
+</body>
+</html>

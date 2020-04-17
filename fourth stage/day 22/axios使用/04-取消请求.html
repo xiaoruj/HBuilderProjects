@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<button onclick="send()" class="btn btn-primary">发送</button>
+<button onclick="cancel()" class="btn btn-danger">取消</button>
+
+<script>
+    let quxiao = null;
+    function send(){
+        if(typeof quxiao === 'function'){
+            quxiao('手动取消');
+        }
+        axios({
+            url:'http://localhost:8000/delay-server',
+            cancelToken: new axios.cancelToken(function executor(c){
+                quxiao = c;
+            })
+        }).then(Response => {
+            quxiao = null;
+            console.log(Response);
+        },error => {
+            console.log(error);
+        });
+    }
+    function cancel(){
+        quxiao('取消了请求');
+    }
+</script>
+
+
+
+</body>
+</html>

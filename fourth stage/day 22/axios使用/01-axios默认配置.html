@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+
+</head>
+<body>
+<script>
+    axios.defaults.method = 'GET';
+    axios.defaults.baseURL = 'https://www.tianqiapi.com/';
+    axios.defsulte.headers = {
+        'custom': 'custom-header'
+    };
+    axios({
+        url: '/api',
+        params: {
+            version: 'v1',
+            city:'杭州',
+            appid:'123456789',
+            appsecret:'TXoD5e8p'
+        }
+    }).then(response => {
+        console.log(response);
+    });
+</script>
+</body>
+</html>
