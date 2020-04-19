@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>1. 双大括号表达式</h2>
+      <p>{{content}}</p>
+      <p>{{content}}</p>
+
+      <h2>2. 指令一: 强制数据绑定</h2>
+      <a v-bind:href="url">度娘</a>
+      <a :href="url">度娘</a>
+      <h2>3. 指令二: 绑定事件监听</h2>
+      <button v-on:click="showMsg">按钮1</button>
+      <button @click="showMsg">按钮2</button>
+      <input type="text" @input="handleInput" />
+      <input type="text" @change="handleChange" />
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        data: {
+          content: "I love you",
+          url: "http://www.taobao.com",
+        },
+        methods: {
+          showMsg: function (event) {
+            console.log("hello 李易峰");
+          },
+          handleInput(event) {
+            console.log(event.target.value);
+            console.log("input事件触发了");
+          },
+          handleChange(event) {
+            console.log(this);
+            console.log("changed事件触发了");
+          },
+        },
+      }).$mount("#app");
+      console.log(vm);
+    </script>
+  </body>
+</html>

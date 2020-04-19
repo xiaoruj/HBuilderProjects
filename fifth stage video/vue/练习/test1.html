@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <input type="text" v-model="msg" />
+      <p>{{msg}}</p>
+      <p>I love you</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          msg: "李易峰",
+          aaa: "峰峰",
+        },
+      }).$mount("#app");
+    </script>
+  </body>
+</html>
