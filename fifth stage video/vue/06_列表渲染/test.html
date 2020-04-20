@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>06_列表渲染</title>
-</head>
-<body>
-
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>06_列表渲染</title>
+  </head>
+  <body>
+    <!--
 1. 列表显示
   数组: v-for / index
   对象: v-for / key
@@ -15,16 +14,35 @@
   替换item
 -->
 
-<div id="demo">
-  <h2>测试: v-for 遍历数组</h2>
+    <div id="demo">
+      <h2>测试: v-for 遍历数组</h2>
+      <ul>
+        <li v-for="(person, index) in persons" :key="person.id">
+          {{person.id}} -- {{person.name}} -- {{person.age}} -- {{index}}
+        </li>
+      </ul>
+      <h2>测试: v-for 遍历对象</h2>
+      <ul>
+        <li v-for="(person, index) in persons" :key="key">
+          {{key}} -- {{value}}
+        </li>
+      </ul>
+    </div>
 
-  <h2>测试: v-for 遍历对象</h2>
-
-</div>
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-
-</script>
-</body>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          persons: [
+            { id: 1, name: "李易峰", age: 33 },
+            { id: 2, name: "杨紫", age: 28 },
+            { id: 3, name: "张一山", age: 28 },
+            { id: 4, name: "刘诗诗", age: 32 },
+            { id: 5, name: "杨幂", age: 33 },
+          ],
+          person: { id: 1, name: "liyifeng", age: 33 },
+        },
+      }).$mount("#demo");
+    </script>
+  </body>
 </html>

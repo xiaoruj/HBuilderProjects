@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>07_事件处理</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>07_事件处理</title>
+  </head>
+  <body>
+    <!--
 1. 绑定监听:
   v-on:xxx="fun"
   @xxx="fun"
@@ -20,19 +20,67 @@
   .enter : 操作的是enter键
 -->
 
-<div id="example">
+    <div id="example">
+      <h2>1. 绑定监听</h2>
 
-  <h2>1. 绑定监听</h2>
+      <button v-on:click="showMsg1">按钮1</button>
+      <button v-on:click="showMsg2('李易峰', 123, 456)">按钮2</button>
+      <button v-on:click="showMsg3('李易峰', $event)">按钮3</button>
+      <button @click="orderType = 1">按钮4</button>
+      <button @click="orderType = 2">按钮5</button>
 
-  <h2>2. 事件修饰符</h2>
+      <h2>2. 事件修饰符</h2>
+      <a href="http://www.baidu.com" @click.prevent="test1">测试a标签</a>
+      <div
+        :style="{width: '300px', height:'300px', backgroundColor:'pink'}"
+        @click="test2"
+      >
+        <div
+          :style="{width: '100px', height:'100px', backgroundColor:'red'}"
+          @click="test3"
+        ></div>
+      </div>
 
-  <h2>3. 按键修饰符</h2>
+      <h2>3. 按键修饰符</h2>
+      <input type="text" @keyup.13="test4" />
+      <input type="text" @keyup.enter="test4" />
+    </div>
 
-</div>
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-
-</script>
-</body>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          orderType: 0,
+        },
+        methods: {
+          showMsg1(event) {
+            console.log(event);
+            console.log("按钮aaa");
+          },
+          showMsg2(msg, a, b) {
+            console.log(msg, a, b);
+            console.log("按钮bbb");
+          },
+          showMsg3(msg, event) {
+            console.log(msg, event);
+            console.log("按钮ccc");
+          },
+          test1(event) {
+            // event.preventDefault();
+          },
+          test2() {
+            console.log("test2事件触发了");
+          },
+          test3(event) {
+            console.log("test3事件触发了");
+          },
+          test4(event) {
+            // if(event.keyCode === 13){
+            console.log("触发了enter");
+            // }
+          },
+        },
+      }).$mount("#example");
+    </script>
+  </body>
 </html>

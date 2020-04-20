@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>06_列表渲染_过滤与排序</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>06_列表渲染_过滤与排序</title>
+  </head>
+  <body>
+    <!--
 1. 列表过滤
 2. 列表排序
 -->
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-
-</script>
-</body>
+    <div id="app">
+      <input type="text" placeholder="请输入名称" v-model="searchName" />
+      <ul>
+        <li v-for="(person) in filterPersons" :key="person.id">
+          {{person.id}} -- {{person.name}} -- {{person.age}}
+        </li>
+      </ul>
+      <button @click="selecOrder(1)">升序排序</button>
+      <button @click="selecOrder(2)">降序排序</button>
+      <button @click="selecOrder(0)">原本排序</button>
+    </div>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          searchName: "",
+          orderType: 0,
+          persons: [
+            { id: 1, name: "李易峰", age: 33 },
+            { id: 2, name: "杨紫", age: 28 },
+            { id: 3, name: "张一山", age: 28 },
+            { id: 4, name: "刘诗诗", age: 32 },
+            { id: 5, name: "杨幂", age: 33 },
+          ],
+        },
+        methods: {
+          selecOrder(orderType) {
+            this.orderType = orderType;
+          },
+        },
+        computed: {
+          filterPersons() {
+            const { persons, searchName, orderType } = this;
+            const filterPersons = persons.filter((person, index, persons) => {
+              return person.name.indexOf(searchName) > -1;
+            });
+            // 排序
+            switch (orderType) {
+              case 1:
+                // 升序
+                filterPersons.sort((p1, p2) => {
+                  return p1.age - p2.age;
+                });
+                break;
+              case 2:
+                // 降序
+                filterPersons.sort((p1, p2) => {
+                  return p2.age - p1.age;
+                });
+                break;
+            }
+            return filterPersons;
+          },
+        },
+      }).$mount("#app");
+    </script>
+  </body>
 </html>

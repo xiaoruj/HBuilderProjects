@@ -20,15 +20,39 @@
 
     <div id="app">
       <h2>1. class绑定: :class='xxx'</h2>
-      <p>这是一段文字~</p>
-      <button>改变颜色</button>
-
+      <p :class="className">今天没有看见李易峰</p>
+      <button @click="changeClolor1">点击切换颜色</button>
+      <p :class="{red: isRed, green: !isRed}">今天没有看见李易峰</p>
+      <button @click="changeClolor2">点击切换颜色</button>
+      <!-- 原生html写法 -->
+      <p class="red green">今天没有看见李易峰</p>
+      <!-- class数组形式 -->
+      <p :class="['red', 'green']">今天没有看见李易峰</p>
       <h2>2. style绑定</h2>
-      <p>这是一段文字~</p>
-      <input type="text" placeholder="请输入字体大小" />
+      <!-- 原生html写法 -->
+      <p style="font-size: 20px; color: red;">今天没有看见李易峰</p>
+      <p :style="{fontSize: size + 'px', color: 'red', marginLeft: '20px'}">
+        今天没有看见李易峰
+      </p>
     </div>
 
     <script src="../js/vue.js"></script>
-    <script></script>
+    <script>
+      new Vue({
+        data: {
+          className: "red",
+          isRed: true,
+          size: 30,
+        },
+        method: {
+          changeClolor1() {
+            this.className = this.className === "red" ? "green" : "red";
+          },
+          changeClolor2() {
+            this.isRed = !this.inRed;
+          },
+        },
+      }).$mount("#app");
+    </script>
   </body>
 </html>

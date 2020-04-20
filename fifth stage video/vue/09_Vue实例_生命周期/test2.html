@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p :style="{opacity: opacity}">看不见李易峰怎么办?</p>
+      <button @click="goDie">忍着，会有一天见到的</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      new Vue({
+        data: {
+          opacity: 0,
+          timeId: null,
+        },
+        methods: {
+          goDie() {
+            this.$destroy();
+          },
+        },
+        created() {
+          this.timeId = setInterval(() => {
+            let opacity = this.opacity;
+            opacity += 0.01;
+            if (opacity >= 1) {
+              opacity = 0;
+            }
+            this.opacity = opacity;
+            console.log("setInterval()");
+          }, 1000 / 60);
+        },
+        beforeDestroy() {
+          clearInterval(this.timeId);
+        },
+      }).$mount("#app");
+    </script>
+  </body>
+</html>

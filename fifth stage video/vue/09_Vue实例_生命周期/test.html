@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>09_Vue实例_生命周期</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>09_Vue实例_生命周期</title>
+  </head>
+  <body>
+    <!--
 1. vue对象的生命周期
   1). 初始化显示
     * beforeCreate()
@@ -23,11 +23,50 @@
   beforeDestory(): 做收尾工作, 如: 清除定时器
 -->
 
-<div>
+    <div id="app">
+      <input type="text" v-model="a" />
+      <p ref="aaa">{{a}}</p>
+      <button @click="goDie">销毁了</button>
+    </div>
 
-</div>
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript"></script>
-</body>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      const vm = new Vue({
+        data: {
+          a: 123,
+        },
+        methods: {
+          goDie() {
+            this.$destroy();
+          },
+        },
+        beforeCreate() {
+          console.log("beforeCreate()");
+        },
+        created() {
+          console.log("created()");
+        },
+        beforeMount() {
+          console.log("beforeMount()");
+        },
+        mounted() {
+          console.log("mounted()");
+        },
+        beforeUpdate() {
+          console.log(this.$refs.aaa.innerText);
+          console.log("beforeUpdate()");
+        },
+        updated() {
+          console.log(this.$refs.aaa.innerText);
+          console.log("updated()");
+        },
+        beforeDestory() {
+          console.log("beforeDestory()");
+        },
+        destoryed() {
+          console.log("destoryed()");
+        },
+      }).$mount("#app");
+    </script>
+  </body>
 </html>

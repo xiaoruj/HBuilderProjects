@@ -15,8 +15,24 @@
       -->
 
     <div id="app "></div>
+    <p v-if="a">111</p>
+    <p v-else>222</p>
 
+    <p v-if="a">111~</p>
+    <p v-else-if="b">222~</p>
+    <p v-else>333~</p>
+
+    <p v-show="a">111~~</p>
+    <p v-show="!a">222~~</p>
+    <button @click="a = !a">点击切换</button>
     <script type="text/javascript" src="../js/vue.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          a: false,
+          b: false,
+        },
+      }).$mount("#app");
+    </script>
   </body>
 </html>
