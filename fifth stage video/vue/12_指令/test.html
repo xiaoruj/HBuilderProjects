@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>12_指令_内置指令</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>12_指令_内置指令</title>
+  </head>
+  <body>
+    <!--
 常用内置指令
   v:text : 更新元素的 textContent
   v-html : 更新元素的 innerHTML
@@ -19,13 +19,34 @@
   ref : 为某个元素注册一个唯一标识, vue对象通过$els属性访问这个元素对象
   v-cloak : 使用它防止闪现表达式, 与css配合: [v-cloak] { display: none }
 -->
-<div id="example">
+    <div id="example">
+      <p>{{text}}</p>
+      <p v-text="text"></p>
+      <p v-html="text"></p>
+      <button @click="test">按钮1</button>
+      <p v-once="true">{{content}}</p>
+      <p v-once>{{content}}</p>
+      <input type="text" ref="msgInput" />
+      <button @click="test1">按钮1</button>
+    </div>
 
-</div>
-
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
-
-</script>
-</body>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          text: "<span>李易峰</span>",
+          content: 123,
+        },
+        methods: {
+          this() {
+            this.content++;
+          },
+          test1() {
+            console.log(this.$refs.msgInput);
+            console.log(this.$refs.msgInput.value);
+          },
+        },
+      }).$mount("#example");
+    </script>
+  </body>
 </html>

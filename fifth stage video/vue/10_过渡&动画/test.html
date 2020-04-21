@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>10_过渡&动画1</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>10_过渡&动画1</title>
+    <style>
+      .fade1-enter,
+      .fade1-leave-to {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      .fade1-enter-to,
+      .fade1-leave {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .fade1-enter-active,
+      .fade1-leave-active {
+        transition: opacity 2s, transform 2s;
+      }
+
+      .fade2-enter,
+      .fade2-leave-to {
+        opacity: 0;
+        transform: translateX(200px);
+      }
+
+      .fade2-enter-to,
+      .fade2-leave {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .fade2-enter-active,
+      .fade2-leave-active {
+        transition: opacity 2s, transform 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
 1. vue动画的理解
   操作css的trasition或animation
   vue会给目标元素添加/移除特定的class
@@ -20,10 +55,24 @@
   xxx-enter: 指定隐藏时的样式
 -->
 
+    <div id="app">
+      <transition name="fade1">
+        <p v-if="isShow">hello 李易峰</p>
+      </transition>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script type="text/javascript">
+      <transition name="fade2">
+        <p v-if="isShow">hello 李易峰~~~</p>
+      </transition>
 
-</script>
-</body>
+      <button @click="isShow = !isShow">切换</button>
+    </div>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+      new Vue({
+        data: {
+          isShow: true,
+        },
+      }).$mount("#app");
+    </script>
+  </body>
 </html>

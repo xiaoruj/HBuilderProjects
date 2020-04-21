@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{msg}}</p>
+      <button @click="msg++">按钮1</button>
+      <p>{{msg2}}</p>
+      <button @click="msg2++">按钮2</button>
+      <ul>
+        <li v-for="(value, key) in person">
+          {{key}} -- {{value}}
+        </li>
+      </ul>
+      <button @click="test">按钮3</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      new Vue({
+        data() {
+          this.msg2 = 456;
+          return {
+            msg: 123,
+            person: {
+              name: "杨紫",
+            },
+          };
+        },
+        methods: {
+          test() {
+            this.$set(this.person, "age", 26);
+          },
+        },
+      }).$mount("#app");
+    </script>
+  </body>
+</html>

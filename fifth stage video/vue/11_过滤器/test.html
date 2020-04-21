@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>11_过滤器</title>
-</head>
-<body>
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <title>11_过滤器</title>
+  </head>
+  <body>
+    <!--
 1. 理解过滤器
   功能: 对要显示的数据进行特定格式化后再显示
   注意: 并没有改变原本的数据, 可是产生新的对应的数据
@@ -19,14 +19,31 @@
     <div>{{myData | filterName}}</div>
     <div>{{myData | filterName(arg)}}</div>
 -->
-<!--需求: 对当前时间进行指定格式显示-->
-<div id="test">
-  <h2>显示格式化的日期时间</h2>
-</div>
+    <!--需求: 对当前时间进行指定格式显示-->
+    <div id="test">
+      <h2>显示格式化的日期时间</h2>
+      <p>{{nowTime | dateFormat}}</p>
+      <p>{{nowTime | dateFormat('YYYY年MM月DD日')}}</p>
+      <p>{{nowTime | dateFormat('HH:mm:ss')}}</p>
+      <p>{{nowTime | dateFormat2}}</p>
+    </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script>
-
-</script>
-</body>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/dayjs/1.8.24/dayjs.min.js"></script>
+    <script>
+      Vue.filter("dateFormat2", function (value) {
+        return dayjs(value).format("HH:mm");
+      });
+      new Vue({
+        data: {
+          nowTime: Date.now(),
+        },
+        filters: {
+          dateFormat(value, formatsTr = "YYY-MM-DD HH:mm:ss") {
+            return dayjs(value).format(formatsTr);
+          },
+        },
+      }).$mount("#test");
+    </script>
+  </body>
 </html>

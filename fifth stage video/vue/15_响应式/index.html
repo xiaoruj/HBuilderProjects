@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{msg}}</p>
+      <button @click="msg += '~~~'">按钮1</button>
+
+      <ul>
+        <li v-for="(value, key) in person">
+          {{key}} -- {{value}}
+        </li>
+      </ul>
+      <button @click="person.age++">按钮2</button>
+
+      <ul>
+        <li v-for="(person) in persons" :key="person.id">
+          {{person.id}} -- {{person.name}}
+        </li>
+      </ul>
+      <button @click="test">按钮3</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      new Vue({
+        data: {
+          msg: "hello 李易峰",
+          person: {
+            name: "杨洋",
+            age: 25,
+          },
+          persons: [
+            { id: 1, name: "李易峰" },
+            { id: 2, name: "杨紫" },
+            { id: 3, name: "张一山" },
+            { id: 4, name: "韩雪" },
+            { id: 5, name: "刘诗诗" },
+          ],
+        },
+        methods: {
+          test() {
+            // this.persons.push({ id: 6, name: "冯绍峰" });
+            // this.persons.sort((a, b) => b.id - a.id);
+            this.persons = [];
+            // this.persons.splice(0, 1, { id: 7, name: "杨幂" });
+          },
+        },
+      }).$mount("#app");
+    </script>
+  </body>
+</html>
