@@ -1,0 +1,39 @@
+<template>
+  <li class="list-group-item">
+    <div id="handle">
+      <a href="javascript:;">删除</a>
+    </div>
+    <p class="user"><span>anny</span><span>说:</span></p>
+    <p class="centence">Vue不错</p>
+  </li>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+li {
+  transition: 0.5s;
+  overflow: hidden;
+}
+.handle {
+  width: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  position: absolute;
+  right: 10px;
+  top: 1px;
+  text-align: center;
+}
+.hand a {
+  display: block;
+  text-decoration: none;
+}
+.list-group-item .centence {
+  padding: 0px 50px;
+}
+.user {
+  font-size: 22px;
+}
+</style>

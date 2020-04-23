@@ -6,16 +6,16 @@
 
 <script>
 export default {
-    data(){
-        return{
-            title: "李易峰",
-        };
-    },
-},
+  data() {
+    return {
+      title: "hello 李易峰",
+    };
+  },
+};
 </script>
 
 <style scoped>
 .title {
-  color: goldenrod;
+  color: plum;
 }
 </style>

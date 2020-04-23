@@ -5,8 +5,8 @@
     <HelloWorld></HelloWorld>
     <hello-world></hello-world>
     <hello-world />
-    <hello />
-    <img class="logo" src="" alt="logo" />
+    <Hello />
+    <img class="logo" src="./assets/imgages/logo.png" alt="logo" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import HelloWorld from "@comps/HelloWorld";
 export default {
   data() {
     return {
-      title: "李易峰",
+      title: "我在北京等你李易峰",
     };
   },
   components: {
@@ -24,7 +24,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .title {
   color: pink;
 }

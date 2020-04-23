@@ -87,4 +87,11 @@ module.exports = {
     clientLogLevel: "none",
   },
   devtool: "cheap-module-source-map",
+  resolve: {
+    alias: {
+      "@": resolve("src"),
+      "@comps": resolve("src/componnts"),
+    },
+    extensions: [".js", ".vue", ".json"],
+  },
 };
