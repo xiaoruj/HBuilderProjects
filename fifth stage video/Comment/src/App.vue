@@ -10,8 +10,8 @@
       </div>
     </header>
     <div id="container">
-      <AddComment />
-      <CommentList />
+      <AddComment :addComment="addComment" />
+      <CommentList :comments="comments" :delComment="delComment" />
     </div>
   </div>
 </template>
@@ -20,7 +20,23 @@
 import AddComment from "@comps/AddComment";
 import CommentList from "@CommentList";
 export default {
-  component: {
+  data() {
+    return {
+      comments: [
+        { id: 1, name: "anny", content: "I love liyifeng" },
+        { id: 2, name: "rose", content: "I love Anny" },
+      ],
+    };
+  },
+  methods: {
+    addComment(comment) {
+      this.comments.unshift(comment);
+    },
+    delComment(id) {
+      this.comments = this.comments.filter((comment) => comment.id !== id);
+    },
+  },
+  components: {
     AddComment,
     CommentList,
   },

@@ -1,15 +1,29 @@
 <template>
   <li class="list-group-item">
     <div id="handle">
-      <a href="javascript:;">删除</a>
+      <a href="javascript:;" @click.prevent="handleDel">删除</a>
     </div>
-    <p class="user"><span>anny</span><span>说:</span></p>
-    <p class="centence">Vue不错</p>
+    <p class="user">
+      <span>{{ comment.name }}</span
+      ><span>说:</span>
+    </p>
+    <p class="centence">{{ comment.content }}</p>
   </li>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    comment: Object,
+  },
+  methods: {
+    handleDel() {
+      if (window.confirm(`您确定要删除评论吗？`)) {
+        this.delComment(this.comment.id);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -11,6 +11,7 @@
           class="form-control"
           rows="6"
           placeholder="评论内容"
+          v-model="content"
         ></textarea>
       </div>
       <div class="form-group">
@@ -25,7 +26,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    addComment: Function,
+  },
+  data() {
+    return {
+      name: "",
+      content: "",
+    };
+  },
+  methods: {
+    handleSubmit() {
+      const name = this.name.trim();
+      const content = this.content.trim();
+      if (!name || !content) {
+        alert("输入的评论不能为空");
+        return;
+      }
+      this.addComment({ id: Data.now(), name, content });
+      this.name = this.content = "";
+    },
+  },
+};
 </script>
 
 <style></style>
