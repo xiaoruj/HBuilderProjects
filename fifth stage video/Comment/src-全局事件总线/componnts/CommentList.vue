@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import PubSub from "pubsub-js";
 import CommentItem from "@comps/CommentItem";
 export default {
   props: ["comments"],
