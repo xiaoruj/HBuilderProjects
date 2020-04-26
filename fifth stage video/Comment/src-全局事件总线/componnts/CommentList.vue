@@ -7,7 +7,6 @@
         v-for="comment in comments"
         :key="comment.id"
         :comment="comment"
-        :delComment="delComment"
       />
     </ul>
   </div>
@@ -16,7 +15,30 @@
 <script>
 import CommentItem from "@comps/CommentItem";
 export default {
-  props: ["comments"],
+  data() {
+    return {
+      comments: [
+        { id: 2, name: "李易峰", content: "我在北京等你" },
+        { id: 1, name: "杨紫", content: "亲爱的热爱的" },
+      ],
+    };
+  },
+  mounted() {
+    this.$bus.$on("add-comment", this.addComment);
+    this.$bus.$on("del-comment", this.delComment);
+  },
+  beforeDestory() {
+    this.$bus.$off("add-comment", this.addComment);
+    this.$bus.$off("del-comment", this.delComment);
+  },
+  methods: {
+    addComment(comment) {
+      this.comments.unshift(comment);
+    },
+    delComment(id) {
+      this.comments = this.comments.filter((comment) => comment.id !== id);
+    },
+  },
   components: {
     CommentItem,
   },

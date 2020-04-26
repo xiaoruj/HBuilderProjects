@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Child组件...</h3>
+    <h3>Child组件</h3>
     <button @click="add">添加</button>
   </div>
 </template>
@@ -9,18 +9,15 @@
 export default {
   data() {
     return {
-      person: {
-        id: 2,
-        name: "李易峰",
-      },
+      persons: [(id: 2), (name: "李易峰")],
     };
   },
   methods: {
     add() {
-      this.$emit("add-person", this.person);
+      this.$globalEventBus.$emit("add-person", this.person);
     },
   },
 };
 </script>
 
-<style></style>
+<style scoped></style>

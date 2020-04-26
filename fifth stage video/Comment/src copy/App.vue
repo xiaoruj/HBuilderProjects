@@ -23,8 +23,8 @@ export default {
   data() {
     return {
       comments: [
-        { id: 1, name: "anny", content: "I love liyifeng" },
-        { id: 2, name: "rose", content: "I love Anny" },
+        { id: 1, name: "李易峰", content: "我在北京等你" },
+        { id: 2, name: "杨紫", content: "亲爱的热爱的" },
       ],
     };
   },

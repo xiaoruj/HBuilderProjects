@@ -3,7 +3,12 @@
     <from id="form-horizontal" @submit.prevent="handleSubmit">
       <div id="form-group">
         <label>用户名</label>
-        <input type="text" class="form-control" placeholder="用户名" v-model="name" />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="用户名"
+          v-model="name"
+        />
       </div>
       <div class="form-group">
         <label>评论内容</label>
@@ -26,10 +31,8 @@
 </template>
 
 <script>
+import PubSub from "pubsub-js";
 export default {
-  props: {
-    addComment: Function,
-  },
   data() {
     return {
       name: "",

@@ -2,7 +2,7 @@
   <div>
     <h1>App组件...</h1>
     <ul>
-      <li v-for="person in persons" :key="person.id">
+      <li v-for="person in person" :kef="person.id">
         {{ person.name }}
       </li>
     </ul>
@@ -12,17 +12,17 @@
 
 <script>
 import Child from "@comps/Child";
+
 export default {
   data() {
     return {
-      persons: [{ id: 1, name: "杨紫" }],
+      person: [{ id: 1, name: "李易峰" }],
     };
   },
-  created() {},
-  mounted() {
-    this.$globalEventBus.$on("add-person", this.addPerson);
+  created() {
+    console.log(this.$refs.child);
   },
-  berforeDestory() {
+  mounthed() {
     this.$globalEventBus.$off("add-person", this.addPerson);
   },
   methods: {
@@ -36,4 +36,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

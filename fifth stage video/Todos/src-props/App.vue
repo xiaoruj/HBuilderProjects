@@ -1,33 +1,26 @@
 <template>
-  <ul class="todo-main">
-    <Item
-      v-for="todo in todos"
-      :key="todo.id"
-      :todo="todo"
-      :updateTodo="updateTodo"
-      :delTodo="delTodo"
-    />
-  </ul>
+  <div class="todo-container">
+    <div class="todo-wrap">
+      <Header :addTodo="addTodo" />
+      <List :todos="todos" :updateTodo="updateTodo" :delTodo="delTodo" />
+      <Footer
+        :todos="todos"
+        :handleSelectAll="handleSelectAll"
+        :delCompletedTodo="delCompletedTodo"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-import Item from "@comps/Item";
+import Header from "@comps/Header";
+import List from "@comps/List";
+import Footer from "@comps/Footer";
 export default {
   data() {
     return {
       todos: JSON.parse(window.localStorage.getItem("todos")) || [],
     };
-  },
-  mounted() {
-    this.$bus.$on("add-todo", this.addTodo);
-    this.$bus.$on("handle-select-all", this.handleSelectAll);
-    this.$bus.$on("del-completed-todo", this.delCompletedTodo);
-    this.$bus.$emit("receive-todos", this.todos);
-  },
-  beforeDestory() {
-    this.$bus.$off("add-todo", this.addTodo);
-    this.$bus.$off("handle-select-all", this.handleSelectAll);
-    this.$bus.$off("del-completed-todo", this.delCompletedTodo);
   },
   methods: {
     //更新todo方法
@@ -61,25 +54,21 @@ export default {
     },
   },
   components: {
-    Item,
+    Header,
+    List,
+    Footer,
   },
 };
 </script>
 
 <style scoped>
-.todo-main {
-  margin-left: 0px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 0px;
+.todo-container {
+  width: 600px;
+  margin: 0 auto;
 }
-
-.todo-empty {
-  height: 40px;
-  line-height: 40px;
+.todo-container .todo-wrap {
+  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 2px;
-  padding-left: 5px;
-  margin-top: 10px;
+  border-radius: 5px;
 }
 </style>

@@ -7,7 +7,6 @@
         v-for="comment in comments"
         :key="comment.id"
         :comment="comment"
-        :delComment="delComment"
       />
     </ul>
   </div>
@@ -17,7 +16,34 @@
 import PubSub from "pubsub-js";
 import CommentItem from "@comps/CommentItem";
 export default {
-  props: ["comments"],
+  data() {
+    return {
+      comments: [
+        { id: 2, name: "李易峰", content: "我在北京等你" },
+        { id: 1, name: "杨紫", content: "亲爱的热爱的" },
+      ],
+    };
+  },
+  created() {
+    PubSub.subscribe("add-comment", (msg, data) => {
+      console.log(msg);
+      console.log(data);
+      this.addComment(data);
+    });
+  },
+  beforeDestory() {
+    PubSub.unsubscribe("add-comment");
+    PubSub.unsubscribe("del-comment");
+  },
+  methods: {
+    addComment(comment) {
+      this.comments.unshift(comment);
+    },
+    delComment(id) {
+      this.comments = this.comments.filter((comment) => comment.id !== id);
+    },
+  },
+
   components: {
     CommentItem,
   },

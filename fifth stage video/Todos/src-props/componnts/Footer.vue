@@ -18,15 +18,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      todos: [],
-    };
-  },
-  created() {
-    this.$bus.$on("receive-todos", (todos) => {
-      this.todos = todos;
-    });
+  props: {
+    todos: Array,
+    handleSelectAll: Function,
+    delCompletedTodo: Function,
   },
   methods: {
     handleDel() {

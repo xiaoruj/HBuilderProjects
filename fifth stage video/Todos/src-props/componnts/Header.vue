@@ -11,6 +11,9 @@
 
 <script>
 export default {
+  props: {
+    addTodo: Function,
+  },
   data() {
     return {
       name: "",

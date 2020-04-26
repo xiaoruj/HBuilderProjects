@@ -19,7 +19,7 @@ export default {
   methods: {
     handleDel() {
       if (window.confirm(`您确定要删除评论吗？`)) {
-        this.delComment(this.comment.id);
+        this.delComment("del-comment", this.comment.id);
       }
     },
   },
