@@ -250,21 +250,24 @@ module.exports = {
           options: {
             // 配置对象
             presets: [
+              // 预设，babel要干什么活
               [
                 "@babel/preset-env",
                 {
+                  // 配置按需加载
                   useBuiltIns: "usage",
                   corejs: { version: 3 },
                   targets: {
+                    // 兼容性
                     ie: 9,
-                    chrom: 80,
+                    chrome: 60,
                     firefox: 50,
                     edge: 17,
                     safari: 11,
                   },
                 },
               ],
-            ], // 预设，babel要干什么活
+            ],
             plugins: [], // 插件
           },
         },
@@ -376,15 +379,34 @@ module.exports = {
     // js文件，默认是没有使用HMR（即使开启了HMR，也需要手动写其他代码才可以使用）
     hot: true,
     // 如果webpack配置出错了，将 quiet: true 关掉，这样就会提示错误~
-    // quiet: true, // 启用静默模式，在终端不打印多余信息
+    quiet: true, // 启用静默模式，在终端不打印多余信息
     clientLogLevel: "none", // 在浏览器控制台不打印多余内容
+
+    // 启用代理服务器
     proxy: {
+      /*
+        一旦请求发送到代理服务器上，就会自动将请求转发到目标服务器上
+        问题：
+          如果将来服务器可能有多个，目标服务器地址就有多个
+          当前配置只能访问一个服务器
+      */
+      // '/': 'http://localhost:3000'
+
+      /*
+        一旦请求是以 /api 开头，就会将请求自动转发到目标服务器上
+        但是访问地址是 http://localhost:3000/api/xxx
+        问题：访问地址多一个 /api，导致请求 404
+      */
+      // '/api': 'http://localhost:3000',
+      // '/xxx': 'http://localhost:xxxx'
+
       "/api": {
-        target: "http://localhost:3000",
+        target: "http://localhost:3000", // 目标服务器地址
         pathRewrite: {
-          "^/api": "",
+          // 重写请求地址
+          "^/api": "", // 将/api重写为''(去掉请求地址的/api)
         },
-        changeOrigin: true,
+        changeOrigin: true, // 即使是一个跨域请求也支持
       },
     },
   },
