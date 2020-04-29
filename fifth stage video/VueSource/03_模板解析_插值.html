@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03_模板解析_表达式_vue</title>
+  </head>
+  <body>
+    <div id="root">
+      <p>{{wife.name}}</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script>
+      new MVVM({
+        el: "#rool",
+        data: {
+          name: "李易峰",
+          wife: {
+            name: "杨紫",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test">尚硅谷IT教育</div>
+    <div id="demo">
+      <ul>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+      </ul>
+    </div>
+    <script>
+      const arr1 = [1, 2, 3, 4];
+      const arr2 = arr1.slice();
+      console.log(arr2);
+      const lis = document.getElementsByTagName("li");
+      console.log(lis);
+      const arr3 = [].slice.call(lis);
+      const arr4 = Array.from(lis);
+      console.log(arr3, arr4);
+      const test = document.getElementById("test");
+      console.log(test.nodeType);
+      const textNode = text.firstChild;
+      console.log(textNode.nodeType);
+      const person = {
+        firstName: "jack",
+        lastName: "rose",
+      };
+      Object.defineProperty(person, "fullname", {
+        get() {
+          return this.firstName + "-" + this.lastName;
+        },
+        set(val) {
+          const [firstName, lastName] = val.split("-");
+          this.firstName = firstName;
+          this.lastName = lastName;
+        },
+      });
+
+      const obj = { name: "jack", age: 123 };
+      console.log(Object.keys(obj));
+      console.log(Object.values(obj));
+
+      const obj1 = { name: "jack", age: 123 };
+      obj1__proto__.sex = "男";
+      for (const key in obj1) {
+        if (obj1.hasOwnProperty(key)) {
+          console.log(key);
+        }
+      }
+      console.log(obj1);
+
+      const fragment = document.createDocumentFragment();
+      const demo = document.getElementById("demo");
+      let child;
+      while ((child = demo.firstChild)) {
+        fragment.appendChild(child);
+      }
+      const lis2 = fragment.children[0].children;
+      const arr = [].slice.call(lis2);
+      arr.forEach((li) => {
+        il.textContent = "hello";
+      });
+      demo.appendChild(fragment);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>05_模板解析_一般指令</title>
+    <style>
+      .pink {
+        color: pink;
+      }
+      .font {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <p v-text="msg"></p>
+      <p v-html="msg"></p>
+      <p class="pink" v-class="className">hello atguigu</p>
+    </div>
+    <script src="./js/compile.js"></script>
+    <script src="./js/mvvm.js"></script>
+    <script src="./js/observer.js"></script>
+    <script src="./js/watcher.js"></script>
+    <script>
+      new MVVM({
+        el: "#root",
+        data: {
+          className: "font",
+          msg: "<span>hello</span>",
+        },
+      });
+    </script>
+  </body>
+</html>
