@@ -2,76 +2,374 @@
   margin: 0;
   padding: 0;
 }
-.outer .header > .top {
-  background-color: #eaeaea;
+.warp .top {
+  background-color: seashell;
   height: 30px;
   line-height: 30px;
 }
-.outer .header > .top .container {
+.warp .top .container {
   width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
 }
-.outer .header > .top .container .loginList {
+.warp .top .container .top-left {
   float: left;
 }
-.outer .header > .top .container .loginList p {
-  float: left;
+.warp .top .container .top-left p {
+  display: inline-block;
   margin-right: 10px;
 }
-.outer .header > .top .container .loginList p .register {
+.warp .top .container .top-left .reg {
   border-left: 1px solid #b3aeae;
   padding: 0 5px;
   margin-left: 5px;
 }
-.outer .header > .top .container .typeList {
+.warp .top .container .top-right {
   float: right;
 }
-.outer .header > .top .container .typeList a {
+.warp .top .container .top-right a {
   padding: 0 10px;
+  border-right: 1px solid #b3aeae;
 }
-.outer .header > .top .container .typeList a + a {
-  border-left: 1px solid #b3aeae;
-}
-.outer .header > .bottom {
+
+.warp .bottom {
   width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
 }
-.outer .header > .bottom .logoArea {
+.warp .bottom .logo1 {
   float: left;
 }
-.outer .header > .bottom .logoArea .logo img {
-  width: 175px;
-  margin: 25px 45px;
+.warp .bottom .logo1 .logo img {
+  width: 180px;
 }
-.outer .header > .bottom .searchArea {
+.warp .bottom .ss1 {
   float: right;
-  margin-top: 35px;
 }
-.outer .header > .bottom .searchArea .searchForm {
-  overflow: hidden;
-}
-.outer .header > .bottom .searchArea .searchForm input {
-  box-sizing: border-box;
+.warp .bottom .ss1 .ss input {
   width: 490px;
   height: 32px;
   padding: 0px 4px;
-  border: 2px solid #ea4a36;
+  border: 2px solid red;
   float: left;
+  box-sizing: border-box;
+  margin-top: 35px;
 }
-.outer .header > .bottom .searchArea .searchForm input:focus {
-  outline: none;
-}
-.outer .header > .bottom .searchArea .searchForm button {
-  height: 32px;
+.warp .bottom .ss1 .ss button {
   width: 68px;
-  background-color: #ea4a36;
-  border: none;
+  height: 32px;
+  background-color: red;
   color: #fff;
-  float: left;
-  cursor: pointer;
+  margin-top: 35px;
+  border: 1px solid red;
 }
-.outer .header > .bottom .searchArea .searchForm button:focus {
-  outline: none;
+.warp .type-nav {
+  border-bottom: 2px solid red;
+}
+.warp .type-nav .container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+.warp .type-nav .container .all {
+  width: 210px;
+  height: 45px;
+  background-color: red;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.warp .type-nav .container .nav a {
+  height: 45px;
+  margin: 0 22px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #333;
+}
+.warp .sort {
+  width: 210px;
+  height: 461px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: seashell;
+}
+.warp .sort .all-sort-list2 .item h3 {
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  overflow: hidden;
+  padding: 0 20px;
+  margin: 0;
+}
+.warp .sort .all-sort-list2 .item h3 a {
+  color: #333;
+}
+.warp .sort .all-sort-list2 .item .item-list {
+  display: none;
+  position: absolute;
+  width: 734px;
+  min-height: 460px;
+  height: 200px;
+  background: seashell;
+  left: 210px;
+  border: 1px solid #ddd;
+  top: 0;
+  z-index: 9999 !important;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem {
+  float: left;
+  width: 650px;
+  padding: 0 4px 0 8px;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem dl {
+  border-top: 1px solid #eee;
+  padding: 6px 0;
+  overflow: hidden;
+  zoom: 1;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem dl.fore {
+  border-top: 0;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem dl dt {
+  float: left;
+  width: 54px;
+  line-height: 22px;
+  text-align: right;
+  padding: 3px 6px 0 0;
+  font-weight: 700;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem dl dd {
+  float: left;
+  width: 415px;
+  padding: 3px 0 0;
+  overflow: hidden;
+}
+.warp .sort .all-sort-list2 .item .item-list .subitem dl dd em {
+  float: left;
+  height: 14px;
+  line-height: 14px;
+  padding: 0 8px;
+  margin-top: 5px;
+  border-left: 1px solid #ccc;
+}
+.warp .sort .all-sort-list2 .item:hover .item-list {
+  display: block;
+}
+.warp .list-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .list-container .sortList {
+  height: 464px;
+  padding-left: 210px;
+}
+.warp .list-container .sortList .center {
+  box-sizing: border-box;
+  width: 740px;
+  height: 100%;
+  padding: 5px;
+  float: left;
+}
+.warp .list-container .sortList .right {
+  float: left;
+  width: 250px;
+}
+.warp .list-container .sortList .right .news {
+  border: 1px solid #e4e4e4;
+  margin-top: 5px;
+}
+.warp .list-container .sortList .right .news h4 {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 5px 10px;
+  margin: 5px 5px 0;
+  line-height: 22px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.warp .list-container .sortList .right .news h4 .fl {
+  float: left;
+}
+.warp .list-container .sortList .right .news h4 .fr {
+  float: right;
+  font-size: 12px;
+  font-weight: 400;
+}
+.warp .list-container .sortList .right .news .news-list {
+  padding: 5px 15px;
+  line-height: 26px;
+}
+.warp .list-container .sortList .right .news .news-list .bold {
+  font-weight: 700;
+}
+.warp .list-container .sortList .right .lifeservices {
+  border-right: 1px solid #e4e4e4;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.warp .list-container .sortList .right .lifeservices .life-item {
+  border-left: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  margin-right: -1px;
+  height: 64px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  width: 25%;
+}
+.warp .list-container .sortList .right .lifeservices .life-item .list-item {
+  background-image: url(../images/home/icons.png);
+  width: 61px;
+  height: 40px;
+  display: block;
+}
+.warp .list-container .sortList .right .lifeservices .life-item .service-intro {
+  line-height: 22px;
+  width: 60px;
+  display: block;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(1)
+  .list-item {
+  background-position: 0px -5px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(2)
+  .list-item {
+  background-position: -62px -5px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(3)
+  .list-item {
+  background-position: -126px -5px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(4)
+  .list-item {
+  background-position: -190px -5px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(5)
+  .list-item {
+  background-position: 0px -76px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(6)
+  .list-item {
+  background-position: -62px -76px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(7)
+  .list-item {
+  background-position: -126px -76px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(8)
+  .list-item {
+  background-position: -190px -76px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(9)
+  .list-item {
+  background-position: 0px -146px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(10)
+  .list-item {
+  background-position: -62px -146px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(11)
+  .list-item {
+  background-position: -126px -146px;
+}
+.warp
+  .list-container
+  .sortList
+  .right
+  .lifeservices
+  .life-item:nth-child(12)
+  .list-item {
+  background-position: -190px -146px;
+}
+.warp .list-container .sortList .right .ads {
+  margin-top: 5px;
+}
+.warp .list-container .sortList .right .ads img {
+  opacity: 0.8;
+  transition: all 400ms;
+}
+.warp .list-container .sortList .right .ads img:hover {
+  opacity: 1;
+}
+.warp .today-recommend .py {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .today-recommend .py .re {
+  width: 1200px;
+  height: 165px;
+  /* float: left; */
+  background-color: #eaeaea;
+  margin: 10px 0;
+  display: flex;
+}
+.warp .today-recommend .py .re .clock {
+  width: 20%;
+  background-color: #5c5251;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 20%;
+}
+.warp .today-recommend .py .re .clock .time {
+  padding: 30px 0;
+  line-height: 20px;
 }
