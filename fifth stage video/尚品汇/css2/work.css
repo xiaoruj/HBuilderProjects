@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.warp {
+  position: relative;
+}
 .warp .top {
   background-color: seashell;
   height: 30px;
@@ -34,15 +37,19 @@
 .warp .bottom {
   width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
-.warp .bottom .logo1 {
-  float: left;
-}
+
 .warp .bottom .logo1 .logo img {
   width: 180px;
 }
 .warp .bottom .ss1 {
   float: right;
+}
+.warp .bottom .ss1 .ss {
+  position: absolute;
+  top: -15px;
+  left: 640px;
 }
 .warp .bottom .ss1 .ss input {
   width: 490px;
@@ -80,6 +87,11 @@
   font-size: 14px;
   font-weight: bold;
 }
+.warp .type-nav .container .nav {
+  position: absolute;
+  top: 20px;
+  left: 245px;
+}
 .warp .type-nav .container .nav a {
   height: 45px;
   margin: 0 22px;
@@ -91,7 +103,7 @@
   width: 210px;
   height: 461px;
   position: absolute;
-  top: 45px;
+  top: 80px;
   left: 0;
   background: seashell;
 }
@@ -372,4 +384,260 @@
 .warp .today-recommend .py .re .clock .time {
   padding: 30px 0;
   line-height: 20px;
+}
+
+.warp .rank {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .rank .tab {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 312px;
+}
+.warp .rank .tab .tab-tit {
+  text-align: center;
+}
+.warp .rank .tab .tab-tit a {
+  display: block;
+  padding: 0 18px;
+  float: left;
+  text-decoration: none;
+  font-size: 16px;
+  color: #999;
+}
+.warp .rank .tab .tab-tit a p {
+  margin: 5px 0;
+}
+.warp .rank .tab .tab-tit a .img i {
+  width: 35px;
+  height: 35px;
+  display: block;
+  background: url(../images/home/bg0.png);
+  margin-left: 10px;
+}
+.warp .rank .tab .tab-tit a .text {
+  line-height: 28px;
+}
+.warp .rank .tab .tab-tit .on {
+  color: #e60012;
+}
+.warp .rank .tab .tab-tit .on .img i {
+  background-position: -35px 0;
+}
+.warp .row {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .row .thumbnail {
+  border: 1px solid red;
+}
+.warp .row .thumbnail .caption .dj {
+  color: red;
+  font-size: 18px;
+  font-weight: 400;
+}
+.warp .cnxh {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .cnxh .row {
+  border: 1px solid #666;
+}
+.warp .cnxh .thumbnail {
+  border: 0px;
+}
+.warp .cnxh .thumbnail .q {
+  font-size: 20px;
+  font-weight: 500px;
+  color: red;
+}
+.warp .cnxh .row .thumbnail img {
+  width: 142px;
+  height: 142px;
+  transition: all 400ms;
+  overflow: hidden;
+}
+.warp .cnxh .row .thumbnail img:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+.warp .jydq {
+  margin-top: 15px;
+}
+.warp .jydq .jydq1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .jydq .jydq1 .title .j1 {
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+  line-height: 30px;
+  margin: 9px 0;
+}
+.warp .jydq .jydq1 .title .j2 {
+  float: right;
+}
+.warp .jydq .jydq1 .title .j2 .nav-tabs {
+  display: inline-block;
+  margin: 10px 0 0;
+}
+.warp .jydq .jydq1 .title .j2 .nav-tabs li {
+  float: left;
+  line-height: 18px;
+  margin-left: 9px;
+  border-right: 1px solid #666;
+}
+.warp .jydq .jydq1 .title .j2 .nav-tabs .active {
+  border-right: 1px solid red;
+}
+.warp .jydq .jydq1 .title .j2 .nav-tabs li a {
+  padding-top: 1px;
+  font-weight: 400;
+  background-color: #fff;
+  color: #333;
+}
+
+.warp .jydq .jydq1 .ta-content {
+  border-top: 2px solid #c81623;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 {
+  height: 360px;
+  display: flex;
+  background: seashell;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .blockgary {
+  width: 210px;
+  height: 100%;
+  background: seashell;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .blockgary .jd-list {
+  padding: 15px 0;
+  overflow: hidden;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .blockgary .jd-list li {
+  list-style-type: none;
+  float: left;
+  width: 40%;
+  margin: 0 10px;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+  line-height: 26px;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .blockgary img {
+  width: 100%;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .floorBanner {
+  width: 330px;
+  height: 100%;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .split {
+  width: 220px;
+  height: 100%;
+  position: relative;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .split .floor-x-line {
+  position: absolute;
+  background: #e4e4e4;
+  width: 220px;
+  height: 1px;
+  top: 180px;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .split .floor-conver-pit {
+  width: 100%;
+  height: 50%;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .split .floor-conver-pit img {
+  width: 100%;
+  height: 100%;
+  transition: all 400ms;
+}
+.warp
+  .jydq
+  .jydq1
+  .ta-content
+  .ta-pane
+  .floor-1
+  .split
+  .floor-conver-pit
+  img:hover {
+  opacity: 0.8;
+}
+.warp .jydq .jydq1 .ta-content .ta-pane .floor-1 .center {
+  border: 1px solid #e4e4e4;
+}
+.warp .tu {
+  margin: 10px 0;
+}
+.warp .tu .py-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.warp .tu .py-container .brand-list {
+  overflow: hidden;
+  padding: 15px 0;
+  background: #f7f7f7;
+  line-height: 18px;
+}
+.warp .tu .py-container .brand-list .brand-item {
+  width: 120px;
+  float: left;
+  height: 37px;
+}
+.warp .tu .py-container .brand-list .brand-item img {
+  border-left: 1px dotted #ccc;
+  padding: 0 10px;
+}
+.warp .tu .py-container .brand-list .brand-item:first-child img {
+  border-left: 0;
+}
+.warp .footer {
+  background-color: seashell;
+}
+.warp .footer .footer1 {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.warp .footer .footer1 .footerList {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  padding-left: 40px;
+  overflow: hidden;
+}
+.warp .footer .footer1 .footerList .footerItem {
+  float: left;
+  width: 170px;
+}
+.warp .footer .footer1 .footerList .footerItem h4 {
+  font-weight: 700;
+  font-size: 14px;
+}
+.warp .footer .footer1 .footerList .footerItem img {
+  width: 121px;
+}
+.warp .footer .footer1 .copyright {
+  padding: 20px;
+}
+.warp .footer .footer1 .copyright .helpLink {
+  text-align: center;
+}
+.warp .footer .footer1 .copyright .helpLink li {
+  display: inline;
+}
+.warp .footer .footer1 .copyright .helpLink li .space {
+  width: 1px;
+  height: 13px;
+  background: #666;
+  border-left: 1px solid #666;
+  margin: 8px 10px;
+}
+.warp .footer .footer1 .copyright p {
+  margin: 10px 0;
+  text-align: center;
 }
